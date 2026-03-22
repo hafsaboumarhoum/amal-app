@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "458185027268",
+    "project_id": "amal-157d6",
+    "storage_bucket": "amal-157d6.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:458185027268:android:afbd0c94c95155f463a391",
+        "android_client_info": {
+          "package_name": "com.example.amal"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBfa9H2MxjeRod5pZV7wrwdx6t4guRsLyk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
