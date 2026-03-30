@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:amal/screens/specialist_directory_screen.dart';
+import 'package:amal/screens/daily_guide_screen.dart';
 
 class HomeScreen extends StatelessWidget {
   final String language;
@@ -99,14 +100,15 @@ class HomeScreen extends StatelessWidget {
                 trailing: const Icon(Icons.arrow_forward_ios, size: 16),
                 onTap: () {
                   if (index == 2) {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (_) =>
-                            SpecialistDirectoryScreen(language: language),
-                      ),
-                    );
-                  }
+  Navigator.push(context, MaterialPageRoute(
+    builder: (_) => SpecialistDirectoryScreen(language: language),
+  ));
+} else if (index == 3) {
+  Navigator.push(context, MaterialPageRoute(
+    builder: (_) => DailyGuideScreen(language: language),
+  ));
+}
+
                   // index 0: Visual Library — Coder A wires this
                   // index 1: Audio Challenge — Coder B wires this
                   // index 3: Daily Guide — Coder C wires this
