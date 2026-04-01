@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+import 'screens/guide_categories_screen.dart';
 class HomeScreen extends StatelessWidget {
   final String language;
   const HomeScreen({super.key, required this.language});
@@ -98,12 +98,14 @@ class HomeScreen extends StatelessWidget {
                 ),
                 trailing: const Icon(Icons.arrow_forward_ios, size: 16),
                 onTap: () {
-                  Navigator.pushReplacement(
-                    context,
-                    MaterialPageRoute(
-                      builder: (_) => const HomeScreen(language: 'ar'),
-                    ),
-                  );
+                  In the onTap, for index == 3:
+if (index == 3) {
+  Navigator.push(context, MaterialPageRoute(
+    builder: (_) => GuideCategoriesScreen(language: language),
+  ));
+}
+
+
                 },
               ),
             );
