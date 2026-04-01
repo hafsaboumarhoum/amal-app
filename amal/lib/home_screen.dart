@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+<<<<<<< HEAD
+=======
+import 'screens/category_screen.dart';
+>>>>>>> 54void a6407 (WIP = added home screen, updated welcome screen, assets, and configs)
 
 class HomeScreen extends StatelessWidget {
   final String language;
@@ -13,6 +17,7 @@ class HomeScreen extends StatelessWidget {
         'icon': Icons.image,
         'title_ar': 'المكتبة البصرية',
         'title_en': 'Visual Library',
+<<<<<<< HEAD
         'color': const Color(0xFF6398A9),
       },
       {
@@ -32,16 +37,22 @@ class HomeScreen extends StatelessWidget {
         'title_ar': 'نصائح يومية',
         'title_en': 'Daily Guide',
         'color': const Color(0xFFF9B95C),
+=======
+>>>>>>> 54a6407 (WIP: added home screen, updated welcome screen, assets, and configs)
       },
       {
         'icon': Icons.checklist,
         'title_ar': 'قائمة العلامات المبكرة',
         'title_en': 'Early Signs Checklist',
+<<<<<<< HEAD
         'color': const Color(0xFF96C7B3),
+=======
+>>>>>>> 54a6407 (WIP: added home screen, updated welcome screen, assets, and configs)
       },
     ];
 
     return Scaffold(
+<<<<<<< HEAD
       backgroundColor: const Color(0xFFEDE8D0),
       appBar: AppBar(
         title: Text(isArabic ? 'أمل' : 'AMAL'),
@@ -69,7 +80,7 @@ class HomeScreen extends StatelessWidget {
         padding: const EdgeInsets.all(16),
         child: ListView.separated(
           itemCount: features.length,
-          separatorBuilder: (_, __) => const SizedBox(height: 12),
+          separatorBuilder: (_, _) => const SizedBox(height: 12),
           itemBuilder: (context, index) {
             final f = features[index];
             return Card(
@@ -109,6 +120,34 @@ class HomeScreen extends StatelessWidget {
             );
           },
         ),
+=======
+      appBar: AppBar(
+        title: Text(isArabic ? 'أمل' : 'AMAL'),
+        backgroundColor: const Color(0xFF6398A9),
+      ),
+      body: ListView.builder(
+        itemCount: features.length,
+        itemBuilder: (context, index) {
+          final f = features[index];
+
+          return ListTile(
+            leading: Icon(f['icon'] as IconData),
+            title: Text(
+              isArabic ? f['title_ar'] as String : f['title_en'] as String,
+            ),
+            onTap: () {
+              if (index == 0) {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (_) => CategoryScreen(language: language),
+                  ),
+                );
+              }
+            },
+          );
+        },
+>>>>>>> 54a6407 (WIP: added home screen, updated welcome screen, assets, and configs)
       ),
     );
   }

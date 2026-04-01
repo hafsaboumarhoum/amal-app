@@ -1,0 +1,13 @@
+[
+  {
+    "id": "apple_001",
+    "word_arabic": "تفاحة",
+    "word_english": "Apple",
+    "image_path": "assets/images/cards/apple.png",
+    "audio_arabic_path": "assets/audio/apple_ar.mp3",
+    "audio_english_path": "assets/audio/apple_en.mp3",
+    "category": "Food",
+    "difficulty_level": 1,
+    "ml_labels": ["apple", "fruit", "food"]
+  }
+]
