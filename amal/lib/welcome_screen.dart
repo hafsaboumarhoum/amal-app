@@ -26,30 +26,17 @@ class WelcomeScreen extends StatelessWidget {
               style: TextStyle(fontSize: 18, color: Colors.grey),
             ),
             const SizedBox(height: 48),
-<<<<<<< HEAD
-            _languageButton(
-              context,
-              '🇲🇦  العربية',
-              const Color(0xFF6398A9),
-              'ar',
-            ),
-            const SizedBox(height: 16),
-            _languageButton(
-              context,
-              '🇬🇧  English',
-              const Color(0xFFD7897F),
-              'en',
-=======
             
-            // ✅ Row with language buttons side by side
+            // Row with language buttons side by side
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                _languageButton(context, '🇲🇦  العربية', const Color(0xFF1a7f4b), 'ar'),
-                const SizedBox(width: 20), // spacing between buttons
-                _languageButton(context, '🇬🇧  English', const Color(0xFF2E75B6), 'en'),
+                _languageButton(
+                    context, '🇲🇦  العربية', const Color(0xFF1A7F4B), 'ar'),
+                const SizedBox(width: 20),
+                _languageButton(
+                    context, '🇬🇧  English', const Color(0xFF2E75B6), 'en'),
               ],
->>>>>>> 54a6407 (WIP: added home screen, updated welcome screen, assets, and configs)
             ),
           ],
         ),
@@ -57,21 +44,11 @@ class WelcomeScreen extends StatelessWidget {
     );
   }
 
-<<<<<<< HEAD
-  Widget SizedBox _languageButton(
-    BuildContext context,
-    String label,
-    Color color,
-    String lang,
-  ) {
+  // Language button function
+  Widget _languageButton(
+      BuildContext context, String label, Color color, String language) {
     return SizedBox(
-      width: 260,
-=======
-  // ✅ Language button function
-  Widget _languageButton(BuildContext context, String label, Color color, String language) {
-    return SizedBox(
-      width: 140, // smaller width so both fit side by side
->>>>>>> 54a6407 (WIP: added home screen, updated welcome screen, assets, and configs)
+      width: 140, // fits both buttons side by side
       child: ElevatedButton(
         style: ElevatedButton.styleFrom(
           backgroundColor: color,
@@ -83,22 +60,15 @@ class WelcomeScreen extends StatelessWidget {
         onPressed: () {
           Navigator.pushReplacement(
             context,
-<<<<<<< HEAD
-            MaterialPageRoute(builder: (_) => HomeScreen(language: lang)),
-=======
             MaterialPageRoute(
               builder: (_) => HomeScreen(language: language),
             ),
->>>>>>> 54a6407 (WIP: added home screen, updated welcome screen, assets, and configs)
           );
         },
         child: Text(
           label,
-          style: const TextStyle(fontSize: 20, color: Colors.white),
-<<<<<<< HEAD
-=======
           textAlign: TextAlign.center,
->>>>>>> 54a6407 (WIP: added home screen, updated welcome screen, assets, and configs)
+          style: const TextStyle(fontSize: 20, color: Colors.white),
         ),
       ),
     );
