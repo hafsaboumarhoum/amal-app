@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'screens/category_screen.dart';
+import 'screens/checklist_intro_screen.dart';
 
 class HomeScreen extends StatelessWidget {
   final String language;
@@ -85,8 +86,7 @@ class HomeScreen extends StatelessWidget {
                   vertical: 12,
                 ),
                 leading: CircleAvatar(
-                  backgroundColor:
-                      (f['color'] as Color).withOpacity(0.15),
+                  backgroundColor: (f['color'] as Color).withOpacity(0.15),
                   child: Icon(
                     f['icon'] as IconData,
                     color: f['color'] as Color,
@@ -108,6 +108,14 @@ class HomeScreen extends StatelessWidget {
                       context,
                       MaterialPageRoute(
                         builder: (_) => CategoryScreen(language: language),
+                      ),
+                    );
+                  } else if (index == 4) {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (_) =>
+                            ChecklistIntroScreen(language: language),
                       ),
                     );
                   }
