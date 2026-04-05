@@ -15,6 +15,7 @@ dependencies:
   firebase_storage: ^11.5.6
   flutter_tts: ^3.8.5
   cupertino_icons: ^1.0.8
+  audioplayers: ^5.2.1
 
 dev_dependencies:
   flutter_test:

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../services/card_service.dart';
+import 'card_grid_screen.dart';
 
 class CategoryScreen extends StatelessWidget {
   final String language;
@@ -45,11 +46,16 @@ class CategoryScreen extends StatelessWidget {
           children: categories.map((cat) {
             return GestureDetector(
               onTap: () {
-                // For now just test click
-                ScaffoldMessenger.of(context).showSnackBar(
-                  SnackBar(content: Text(cat)),
-                );
-              },
+  Navigator.push(
+    context,
+    MaterialPageRoute(
+      builder: (_) => CardGridScreen(
+        category: cat,
+        language: language,
+      ),
+    ),
+  );
+},
               child: Card(
                 elevation: 3,
                 shape: RoundedRectangleBorder(

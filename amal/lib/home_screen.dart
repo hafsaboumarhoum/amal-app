@@ -54,8 +54,9 @@ class HomeScreen extends StatelessWidget {
               Navigator.pushReplacement(
                 context,
                 MaterialPageRoute(
-                  builder: (_) =>
-                      HomeScreen(language: isArabic ? 'en' : 'ar'),
+                  builder: (_) => HomeScreen(
+                    language: isArabic ? 'en' : 'ar',
+                  ),
                 ),
               );
             },
@@ -79,9 +80,43 @@ class HomeScreen extends StatelessWidget {
                 borderRadius: BorderRadius.circular(16),
               ),
               child: ListTile(
-                contentPadding:
-                    const EdgeInsets.symmetric(horizontal: 20, vertical: 12),
+                contentPadding: const EdgeInsets.symmetric(
+                  horizontal: 20,
+                  vertical: 12,
+                ),
                 leading: CircleAvatar(
-                  backgroundColor: (f['color'] as Color).withOpacity(0.15),
+                  backgroundColor:
+                      (f['color'] as Color).withOpacity(0.15),
                   child: Icon(
-         Icon(f['icon'] as IconData)
+                    f['icon'] as IconData,
+                    color: f['color'] as Color,
+                  ),
+                ),
+                title: Text(
+                  isArabic
+                      ? f['title_ar'] as String
+                      : f['title_en'] as String,
+                  style: const TextStyle(
+                    fontSize: 18,
+                    fontWeight: FontWeight.w600,
+                  ),
+                ),
+                trailing: const Icon(Icons.arrow_forward_ios, size: 16),
+                onTap: () {
+                  if (index == 0) {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (_) => CategoryScreen(language: language),
+                      ),
+                    );
+                  }
+                },
+              ),
+            );
+          },
+        ),
+      ),
+    );
+  }
+}
