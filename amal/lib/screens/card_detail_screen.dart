@@ -1,9 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:audioplayers/audioplayers.dart';
-import 'package:flutter_sound/flutter_sound.dart';
-import 'package:path_provider/path_provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'dart:io';
 import '../services/card_service.dart';
 
 class CardDetailScreen extends StatefulWidget {
@@ -22,28 +19,17 @@ class CardDetailScreen extends StatefulWidget {
 
 class _CardDetailScreenState extends State<CardDetailScreen> {
   final AudioPlayer _player = AudioPlayer();
-  final FlutterSoundRecorder _recorder = FlutterSoundRecorder();
-  bool _isRecording = false;
-  bool _recorderReady = false;
-  String? _recordingPath;
   int _practiceCount = 0;
 
   @override
   void initState() {
     super.initState();
     _loadPracticeCount();
-    _initRecorder();
-  }
-
-  Future<void> _initRecorder() async {
-    await _recorder.openRecorder();
-    setState(() => _recorderReady = true);
   }
 
   @override
   void dispose() {
     _player.dispose();
-    _recorder.closeRecorder();
     super.dispose();
   }
 
@@ -65,26 +51,6 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
     await _player.stop();
     await _player.play(AssetSource(assetPath.replaceFirst('assets/', '')));
     _incrementPractice();
-  }
-
-  Future<void> _startRecording() async {
-    if (!_recorderReady) return;
-    final dir = await getApplicationDocumentsDirectory();
-    final path = '${dir.path}/recording_${widget.card.id}.aac';
-    await _recorder.startRecorder(toFile: path);
-    setState(() {
-      _isRecording = true;
-      _recordingPath = path;
-    });
-  }
-
-  Future<void> _stopAndPlayRecording() async {
-    await _recorder.stopRecorder();
-    setState(() => _isRecording = false);
-    if (_recordingPath != null && File(_recordingPath!).existsSync()) {
-      await _player.play(DeviceFileSource(_recordingPath!));
-      _incrementPractice();
-    }
   }
 
   @override
@@ -168,23 +134,19 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
             ),
             const SizedBox(height: 24),
             ElevatedButton.icon(
-              onPressed: _isRecording
-                  ? _stopAndPlayRecording
-                  : _startRecording,
-              icon: Icon(_isRecording ? Icons.stop : Icons.mic),
+              onPressed: () {
+                ScaffoldMessenger.of(context).showSnackBar(
+                  const SnackBar(
+                      content: Text('Mic recording coming soon!')),
+                );
+              },
+              icon: const Icon(Icons.mic),
               label: Text(
-                _isRecording
-                    ? (widget.language == 'ar'
-                        ? 'اضغط للإيقاف والاستماع'
-                        : 'Tap to stop & listen')
-                    : (widget.language == 'ar'
-                        ? 'كرر بعدي'
-                        : 'Repeat After Me'),
+                widget.language == 'ar' ? 'كرر بعدي' : 'Repeat After Me',
                 style: const TextStyle(fontSize: 16),
               ),
               style: ElevatedButton.styleFrom(
-                backgroundColor:
-                    _isRecording ? Colors.red : const Color(0xFF96C7B3),
+                backgroundColor: const Color(0xFF96C7B3),
                 foregroundColor: Colors.white,
                 padding: const EdgeInsets.symmetric(
                     horizontal: 32, vertical: 14),

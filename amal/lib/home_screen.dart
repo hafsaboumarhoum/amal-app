@@ -46,7 +46,7 @@ class HomeScreen extends StatelessWidget {
     return Scaffold(
       backgroundColor: const Color(0xFFEDE8D0),
       appBar: AppBar(
-        title: Text(isArabic ? 'أمل' : 'AMAL'),
+        title: Text(isArabic ? 'بلوم' : 'Bloom'),
         backgroundColor: const Color(0xFF6398A9),
         foregroundColor: Colors.white,
         actions: [

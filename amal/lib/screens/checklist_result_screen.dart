@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+import 'package:share_plus/share_plus.dart';
+import 'package:amal/screens/specialist_directory_screen.dart';
+import 'dart:convert';
 
-class ChecklistResultScreen extends StatelessWidget {
+class ChecklistResultScreen extends StatefulWidget {
   final int checkedCount;
   final int totalCount;
   final String language;
@@ -13,9 +17,34 @@ class ChecklistResultScreen extends StatelessWidget {
   });
 
   @override
+  State<ChecklistResultScreen> createState() => _ChecklistResultScreenState();
+}
+
+class _ChecklistResultScreenState extends State<ChecklistResultScreen> {
+
+  @override
+  void initState() {
+    super.initState();
+    _saveResult();
+  }
+
+  Future<void> _saveResult() async {
+    final prefs = await SharedPreferences.getInstance();
+    final sessions = prefs.getStringList('checklist_sessions') ?? [];
+    final session = json.encode({
+      'date': DateTime.now().toIso8601String(),
+      'score': widget.checkedCount,
+      'maxScore': widget.totalCount,
+      'percentage': (widget.checkedCount / widget.totalCount * 100).round(),
+    });
+    sessions.add(session);
+    await prefs.setStringList('checklist_sessions', sessions);
+  }
+
+  @override
   Widget build(BuildContext context) {
-    final isArabic = language == 'ar';
-    final percentage = checkedCount / totalCount;
+    final isArabic = widget.language == 'ar';
+    final percentage = widget.checkedCount / widget.totalCount;
 
     String message;
     Color color;
@@ -56,7 +85,7 @@ class ChecklistResultScreen extends StatelessWidget {
             Icon(icon, size: 80, color: color),
             const SizedBox(height: 24),
             Text(
-              '$checkedCount / $totalCount',
+              '${widget.checkedCount} / ${widget.totalCount}',
               style: TextStyle(
                 fontSize: 48,
                 fontWeight: FontWeight.bold,
@@ -86,6 +115,40 @@ class ChecklistResultScreen extends StatelessWidget {
               ),
             ),
             const SizedBox(height: 32),
+            ElevatedButton.icon(
+              onPressed: () {
+                final pct = (widget.checkedCount / widget.totalCount * 100).round();
+                final text = widget.language == 'ar'
+                    ? 'نتائج فحص بلوم: $pct%\n\nهذه القائمة ليست تشخيصاً.'
+                    : 'Bloom Checklist Results: $pct%\n\nThis checklist is not a diagnosis.';
+                Share.share(text);
+              },
+              icon: const Icon(Icons.share),
+              label: Text(isArabic ? 'مشاركة النتائج' : 'Share Results'),
+              style: ElevatedButton.styleFrom(
+                backgroundColor: const Color(0xFF96C7B3),
+                foregroundColor: Colors.white,
+                padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 14),
+                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+              ),
+            ),
+            const SizedBox(height: 12),
+            ElevatedButton.icon(
+              onPressed: () {
+                Navigator.push(context, MaterialPageRoute(
+                  builder: (_) => SpecialistDirectoryScreen(language: widget.language),
+                ));
+              },
+              icon: const Icon(Icons.local_hospital),
+              label: Text(isArabic ? 'ابحث عن مختص' : 'Find a Specialist'),
+              style: ElevatedButton.styleFrom(
+                backgroundColor: const Color(0xFFD7897F),
+                foregroundColor: Colors.white,
+                padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 14),
+                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+              ),
+            ),
+            const SizedBox(height: 12),
             ElevatedButton(
               onPressed: () {
                 Navigator.popUntil(context, (route) => route.isFirst);

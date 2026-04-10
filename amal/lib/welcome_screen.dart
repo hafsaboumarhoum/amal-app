@@ -13,11 +13,12 @@ class WelcomeScreen extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             const Text(
-              'AMAL | أمل',
+              'Bloom',
               style: TextStyle(
-                fontSize: 40,
-                fontWeight: FontWeight.bold,
+                fontSize: 48,
+                fontWeight: FontWeight.w900,
                 color: Color(0xFF6398A9),
+                letterSpacing: 2,
               ),
             ),
             const SizedBox(height: 12),
@@ -48,7 +49,7 @@ class WelcomeScreen extends StatelessWidget {
   Widget _languageButton(
       BuildContext context, String label, Color color, String language) {
     return SizedBox(
-      width: 140, // fits both buttons side by side
+      width: 140,
       child: ElevatedButton(
         style: ElevatedButton.styleFrom(
           backgroundColor: color,
