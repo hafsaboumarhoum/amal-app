@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:audioplayers/audioplayers.dart';
+import 'package:flutter_sound/flutter_sound.dart';
+import 'package:path_provider/path_provider.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+import 'dart:io';
 import '../services/card_service.dart';
 
 class CardDetailScreen extends StatefulWidget {
@@ -18,16 +22,69 @@ class CardDetailScreen extends StatefulWidget {
 
 class _CardDetailScreenState extends State<CardDetailScreen> {
   final AudioPlayer _player = AudioPlayer();
+  final FlutterSoundRecorder _recorder = FlutterSoundRecorder();
+  bool _isRecording = false;
+  bool _recorderReady = false;
+  String? _recordingPath;
+  int _practiceCount = 0;
+
+  @override
+  void initState() {
+    super.initState();
+    _loadPracticeCount();
+    _initRecorder();
+  }
+
+  Future<void> _initRecorder() async {
+    await _recorder.openRecorder();
+    setState(() => _recorderReady = true);
+  }
 
   @override
   void dispose() {
     _player.dispose();
+    _recorder.closeRecorder();
     super.dispose();
+  }
+
+  Future<void> _loadPracticeCount() async {
+    final prefs = await SharedPreferences.getInstance();
+    setState(() {
+      _practiceCount = prefs.getInt('practice_${widget.card.id}') ?? 0;
+    });
+  }
+
+  Future<void> _incrementPractice() async {
+    final prefs = await SharedPreferences.getInstance();
+    _practiceCount++;
+    await prefs.setInt('practice_${widget.card.id}', _practiceCount);
+    setState(() {});
   }
 
   Future<void> _playAudio(String assetPath) async {
     await _player.stop();
     await _player.play(AssetSource(assetPath.replaceFirst('assets/', '')));
+    _incrementPractice();
+  }
+
+  Future<void> _startRecording() async {
+    if (!_recorderReady) return;
+    final dir = await getApplicationDocumentsDirectory();
+    final path = '${dir.path}/recording_${widget.card.id}.aac';
+    await _recorder.startRecorder(toFile: path);
+    setState(() {
+      _isRecording = true;
+      _recordingPath = path;
+    });
+  }
+
+  Future<void> _stopAndPlayRecording() async {
+    await _recorder.stopRecorder();
+    setState(() => _isRecording = false);
+    if (_recordingPath != null && File(_recordingPath!).existsSync()) {
+      await _player.play(DeviceFileSource(_recordingPath!));
+      _incrementPractice();
+    }
   }
 
   @override
@@ -59,10 +116,18 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                 ),
               ),
             ),
-            const SizedBox(height: 24),
+            const SizedBox(height: 12),
+            Text(
+              widget.language == 'ar'
+                  ? 'تم التدرب $_practiceCount مرة'
+                  : 'Practiced $_practiceCount times',
+              style: const TextStyle(fontSize: 14, color: Colors.grey),
+            ),
+            const SizedBox(height: 12),
             Text(
               c.wordArabic,
-              style: const TextStyle(fontSize: 36, fontWeight: FontWeight.bold),
+              style: const TextStyle(
+                  fontSize: 36, fontWeight: FontWeight.bold),
             ),
             const SizedBox(height: 8),
             Text(
@@ -73,11 +138,13 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
             ElevatedButton.icon(
               onPressed: () => _playAudio(c.audioArabicPath),
               icon: const Icon(Icons.volume_up),
-              label: const Text('استمع بالعربية', style: TextStyle(fontSize: 18)),
+              label: const Text('استمع بالعربية',
+                  style: TextStyle(fontSize: 18)),
               style: ElevatedButton.styleFrom(
                 backgroundColor: const Color(0xFF6398A9),
                 foregroundColor: Colors.white,
-                padding: const EdgeInsets.symmetric(horizontal: 32, vertical: 14),
+                padding: const EdgeInsets.symmetric(
+                    horizontal: 32, vertical: 14),
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(12),
                 ),
@@ -87,30 +154,40 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
             ElevatedButton.icon(
               onPressed: () => _playAudio(c.audioEnglishPath),
               icon: const Icon(Icons.volume_up),
-              label: const Text('Listen in English', style: TextStyle(fontSize: 18)),
+              label: const Text('Listen in English',
+                  style: TextStyle(fontSize: 18)),
               style: ElevatedButton.styleFrom(
                 backgroundColor: const Color(0xFF6398A9),
                 foregroundColor: Colors.white,
-                padding: const EdgeInsets.symmetric(horizontal: 32, vertical: 14),
+                padding: const EdgeInsets.symmetric(
+                    horizontal: 32, vertical: 14),
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(12),
                 ),
               ),
             ),
             const SizedBox(height: 24),
-            OutlinedButton.icon(
-              onPressed: () {
-                ScaffoldMessenger.of(context).showSnackBar(
-                  const SnackBar(content: Text('Mic recording coming next week!')),
-                );
-              },
-              icon: const Icon(Icons.mic),
+            ElevatedButton.icon(
+              onPressed: _isRecording
+                  ? _stopAndPlayRecording
+                  : _startRecording,
+              icon: Icon(_isRecording ? Icons.stop : Icons.mic),
               label: Text(
-                widget.language == 'ar' ? 'كرر بعدي' : 'Repeat After Me',
+                _isRecording
+                    ? (widget.language == 'ar'
+                        ? 'اضغط للإيقاف والاستماع'
+                        : 'Tap to stop & listen')
+                    : (widget.language == 'ar'
+                        ? 'كرر بعدي'
+                        : 'Repeat After Me'),
                 style: const TextStyle(fontSize: 16),
               ),
-              style: OutlinedButton.styleFrom(
-                padding: const EdgeInsets.symmetric(horizontal: 32, vertical: 14),
+              style: ElevatedButton.styleFrom(
+                backgroundColor:
+                    _isRecording ? Colors.red : const Color(0xFF96C7B3),
+                foregroundColor: Colors.white,
+                padding: const EdgeInsets.symmetric(
+                    horizontal: 32, vertical: 14),
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(12),
                 ),
