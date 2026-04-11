@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:audioplayers/audioplayers.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:record/record.dart';
+import 'package:path_provider/path_provider.dart';
+import 'dart:io';
 import '../services/card_service.dart';
 
 class CardDetailScreen extends StatefulWidget {
@@ -19,7 +22,10 @@ class CardDetailScreen extends StatefulWidget {
 
 class _CardDetailScreenState extends State<CardDetailScreen> {
   final AudioPlayer _player = AudioPlayer();
+  final AudioRecorder _recorder = AudioRecorder();
   int _practiceCount = 0;
+  bool _isRecording = false;
+  String? _recordingPath;
 
   @override
   void initState() {
@@ -30,6 +36,7 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
   @override
   void dispose() {
     _player.dispose();
+    _recorder.dispose();
     super.dispose();
   }
 
@@ -52,6 +59,34 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
     await _player.play(AssetSource(assetPath.replaceFirst('assets/', '')));
     _incrementPractice();
   }
+
+  Future<void> _startRecording() async {
+    if (await _recorder.hasPermission()) {
+      final dir = await getApplicationDocumentsDirectory();
+      final path = '${dir.path}/recording_${widget.card.id}.m4a';
+      await _recorder.start(
+        const RecordConfig(encoder: AudioEncoder.aacLc),
+        path: path,
+      );
+      setState(() {
+        _isRecording = true;
+        _recordingPath = path;
+      });
+    }
+  }
+
+  Future<void> _stopAndPlayRecording() async {
+  final path = await _recorder.stop();
+  setState(() => _isRecording = false);
+  debugPrint('Recording path: $path');
+  if (path != null && File(path).existsSync()) {
+    debugPrint('File exists, playing...');
+    await _player.play(DeviceFileSource(path));
+    _incrementPractice();
+  } else {
+    debugPrint('File not found at path: $path');
+  }
+}
 
   @override
   Widget build(BuildContext context) {
@@ -134,19 +169,19 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
             ),
             const SizedBox(height: 24),
             ElevatedButton.icon(
-              onPressed: () {
-                ScaffoldMessenger.of(context).showSnackBar(
-                  const SnackBar(
-                      content: Text('Mic recording coming soon!')),
-                );
-              },
-              icon: const Icon(Icons.mic),
+              onPressed: _isRecording ? _stopAndPlayRecording : _startRecording,
+              icon: Icon(_isRecording ? Icons.stop : Icons.mic),
               label: Text(
-                widget.language == 'ar' ? 'كرر بعدي' : 'Repeat After Me',
+                _isRecording
+                    ? (widget.language == 'ar'
+                        ? 'اضغط للإيقاف والاستماع'
+                        : 'Tap to stop & listen')
+                    : (widget.language == 'ar' ? 'كرر بعدي' : 'Repeat After Me'),
                 style: const TextStyle(fontSize: 16),
               ),
               style: ElevatedButton.styleFrom(
-                backgroundColor: const Color(0xFF96C7B3),
+                backgroundColor:
+                    _isRecording ? Colors.red : const Color(0xFF96C7B3),
                 foregroundColor: Colors.white,
                 padding: const EdgeInsets.symmetric(
                     horizontal: 32, vertical: 14),

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:share_plus/share_plus.dart';
-import 'package:amal/screens/specialist_directory_screen.dart';
+import 'specialist_directory_screen.dart';
 import 'dart:convert';
 
 class ChecklistResultScreen extends StatefulWidget {
