@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'screens/category_screen.dart';
 import 'screens/checklist_intro_screen.dart';
+import 'screens/challenge_screen.dart';
 
 class HomeScreen extends StatelessWidget {
   final String language;
@@ -110,12 +111,18 @@ class HomeScreen extends StatelessWidget {
                         builder: (_) => CategoryScreen(language: language),
                       ),
                     );
+                  } else if (index == 1) {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (_) => ChallengeScreen(language: language),
+                      ),
+                    );
                   } else if (index == 4) {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (_) =>
-                            ChecklistIntroScreen(language: language),
+                        builder: (_) => ChecklistIntroScreen(language: language),
                       ),
                     );
                   }
