@@ -13,11 +13,12 @@ class WelcomeScreen extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             const Text(
-              'AMAL | أمل',
+              'Bloom',
               style: TextStyle(
-                fontSize: 40,
-                fontWeight: FontWeight.bold,
+                fontSize: 48,
+                fontWeight: FontWeight.w900,
                 color: Color(0xFF6398A9),
+                letterSpacing: 2,
               ),
             ),
             const SizedBox(height: 12),
@@ -26,18 +27,17 @@ class WelcomeScreen extends StatelessWidget {
               style: TextStyle(fontSize: 18, color: Colors.grey),
             ),
             const SizedBox(height: 48),
-            _languageButton(
-              context,
-              '🇲🇦  العربية',
-              const Color(0xFF6398A9),
-              'ar',
-            ),
-            const SizedBox(height: 16),
-            _languageButton(
-              context,
-              '🇬🇧  English',
-              const Color(0xFFD7897F),
-              'en',
+            
+            // Row with language buttons side by side
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                _languageButton(
+                    context, '🇲🇦  العربية', const Color(0xFF1A7F4B), 'ar'),
+                const SizedBox(width: 20),
+                _languageButton(
+                    context, '🇬🇧  English', const Color(0xFF2E75B6), 'en'),
+              ],
             ),
           ],
         ),
@@ -45,14 +45,11 @@ class WelcomeScreen extends StatelessWidget {
     );
   }
 
+  // Language button function
   Widget _languageButton(
-    BuildContext context,
-    String label,
-    Color color,
-    String lang,
-  ) {
+      BuildContext context, String label, Color color, String language) {
     return SizedBox(
-      width: 260,
+      width: 140,
       child: ElevatedButton(
         style: ElevatedButton.styleFrom(
           backgroundColor: color,
@@ -64,11 +61,14 @@ class WelcomeScreen extends StatelessWidget {
         onPressed: () {
           Navigator.pushReplacement(
             context,
-            MaterialPageRoute(builder: (_) => HomeScreen(language: lang)),
+            MaterialPageRoute(
+              builder: (_) => HomeScreen(language: language),
+            ),
           );
         },
         child: Text(
           label,
+          textAlign: TextAlign.center,
           style: const TextStyle(fontSize: 20, color: Colors.white),
         ),
       ),

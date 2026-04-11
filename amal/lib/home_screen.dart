@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'screens/category_screen.dart';
+import 'screens/checklist_intro_screen.dart';
 
 class HomeScreen extends StatelessWidget {
   final String language;
@@ -44,7 +46,7 @@ class HomeScreen extends StatelessWidget {
     return Scaffold(
       backgroundColor: const Color(0xFFEDE8D0),
       appBar: AppBar(
-        title: Text(isArabic ? 'أمل' : 'AMAL'),
+        title: Text(isArabic ? 'بلوم' : 'Bloom'),
         backgroundColor: const Color(0xFF6398A9),
         foregroundColor: Colors.white,
         actions: [
@@ -53,11 +55,12 @@ class HomeScreen extends StatelessWidget {
               Navigator.pushReplacement(
                 context,
                 MaterialPageRoute(
-                  builder: (_) => const HomeScreen(language: 'en'),
+                  builder: (_) => HomeScreen(
+                    language: isArabic ? 'en' : 'ar',
+                  ),
                 ),
               );
             },
-
             child: Text(
               isArabic ? 'EN' : 'عربي',
               style: const TextStyle(color: Colors.white, fontSize: 16),
@@ -90,7 +93,9 @@ class HomeScreen extends StatelessWidget {
                   ),
                 ),
                 title: Text(
-                  isArabic ? f['title_ar'] as String : f['title_en'] as String,
+                  isArabic
+                      ? f['title_ar'] as String
+                      : f['title_en'] as String,
                   style: const TextStyle(
                     fontSize: 18,
                     fontWeight: FontWeight.w600,
@@ -98,12 +103,22 @@ class HomeScreen extends StatelessWidget {
                 ),
                 trailing: const Icon(Icons.arrow_forward_ios, size: 16),
                 onTap: () {
-                  Navigator.pushReplacement(
-                    context,
-                    MaterialPageRoute(
-                      builder: (_) => const HomeScreen(language: 'ar'),
-                    ),
-                  );
+                  if (index == 0) {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (_) => CategoryScreen(language: language),
+                      ),
+                    );
+                  } else if (index == 4) {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (_) =>
+                            ChecklistIntroScreen(language: language),
+                      ),
+                    );
+                  }
                 },
               ),
             );

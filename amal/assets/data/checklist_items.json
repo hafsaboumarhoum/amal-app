@@ -1,0 +1,32 @@
+[
+  {
+    "age_group": "0-12m",
+    "sign_english": "Does not make eye contact when you speak to them",
+    "sign_arabic": "لا يحافظ على التواصل البصري عند التحدث إليه"
+  },
+  {
+    "age_group": "0-12m",
+    "sign_english": "Does not smile or respond to familiar faces",
+    "sign_arabic": "لا يبتسم أو يستجيب للوجوه المألوفة"
+  },
+  {
+    "age_group": "12-24m",
+    "sign_english": "Does not point to objects to show interest",
+    "sign_arabic": "لا يشير إلى الأشياء لإظهار الاهتمام"
+  },
+  {
+    "age_group": "12-24m",
+    "sign_english": "Does not say single words by 16 months",
+    "sign_arabic": "لا يقول كلمات مفردة بحلول 16 شهراً"
+  },
+  {
+    "age_group": "24-36m",
+    "sign_english": "Does not use two-word phrases",
+    "sign_arabic": "لا يستخدم عبارات من كلمتين"
+  },
+  {
+    "age_group": "24-36m",
+    "sign_english": "Loses previously acquired language skills",
+    "sign_arabic": "يفقد مهارات لغوية اكتسبها سابقاً"
+  }
+]
