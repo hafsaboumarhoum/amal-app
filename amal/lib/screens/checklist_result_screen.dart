@@ -54,27 +54,27 @@ class _ChecklistResultScreenState extends State<ChecklistResultScreen> {
       message = isArabic
           ? 'لا توجد علامات مقلقة في الوقت الحالي'
           : 'No concerning signs at this time';
-      color = const Color(0xFF96C7B3);
+      color = const Color(0xFFB4D3D9);
       icon = Icons.check_circle;
     } else if (percentage <= 0.6) {
       message = isArabic
           ? 'بعض العلامات موجودة، يُنصح باستشارة متخصص'
           : 'Some signs present, consider consulting a specialist';
-      color = const Color(0xFFF9B95C);
+      color = const Color(0xFFBDA6CE);
       icon = Icons.warning;
     } else {
       message = isArabic
           ? 'علامات متعددة موجودة، يُرجى استشارة متخصص في أقرب وقت'
           : 'Multiple signs present, please consult a specialist soon';
-      color = const Color(0xFFD7897F);
+      color = const Color(0xFF9B8EC7);
       icon = Icons.error;
     }
 
     return Scaffold(
-      backgroundColor: const Color(0xFFEDE8D0),
+      backgroundColor: const Color(0xFFF2EAE0),
       appBar: AppBar(
         title: Text(isArabic ? 'النتائج' : 'Results'),
-        backgroundColor: const Color(0xFF96C7B3),
+        backgroundColor: const Color(0xFFB4D3D9),
         foregroundColor: Colors.white,
       ),
       body: Padding(
@@ -126,26 +126,29 @@ class _ChecklistResultScreenState extends State<ChecklistResultScreen> {
               icon: const Icon(Icons.share),
               label: Text(isArabic ? 'مشاركة النتائج' : 'Share Results'),
               style: ElevatedButton.styleFrom(
-                backgroundColor: const Color(0xFF96C7B3),
+                backgroundColor: const Color(0xFFB4D3D9),
                 foregroundColor: Colors.white,
                 padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 14),
-                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(12)),
               ),
             ),
             const SizedBox(height: 12),
             ElevatedButton.icon(
               onPressed: () {
                 Navigator.push(context, MaterialPageRoute(
-                  builder: (_) => SpecialistDirectoryScreen(language: widget.language),
+                  builder: (_) => SpecialistDirectoryScreen(
+                      language: widget.language),
                 ));
               },
               icon: const Icon(Icons.local_hospital),
               label: Text(isArabic ? 'ابحث عن مختص' : 'Find a Specialist'),
               style: ElevatedButton.styleFrom(
-                backgroundColor: const Color(0xFFD7897F),
+                backgroundColor: const Color(0xFFBDA6CE),
                 foregroundColor: Colors.white,
                 padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 14),
-                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(12)),
               ),
             ),
             const SizedBox(height: 12),
@@ -154,7 +157,7 @@ class _ChecklistResultScreenState extends State<ChecklistResultScreen> {
                 Navigator.popUntil(context, (route) => route.isFirst);
               },
               style: ElevatedButton.styleFrom(
-                backgroundColor: const Color(0xFF96C7B3),
+                backgroundColor: const Color(0xFF9B8EC7),
                 foregroundColor: Colors.white,
                 padding: const EdgeInsets.symmetric(
                   horizontal: 48,

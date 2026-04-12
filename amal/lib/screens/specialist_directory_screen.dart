@@ -8,10 +8,10 @@ class SpecialistDirectoryScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final isArabic = language == 'ar';
     return Scaffold(
-      backgroundColor: const Color(0xFFEDE8D0),
+      backgroundColor: const Color(0xFFF2EAE0),
       appBar: AppBar(
         title: Text(isArabic ? 'دليل المختصين' : 'Specialist Directory'),
-        backgroundColor: const Color(0xFFD7897F),
+        backgroundColor: const Color(0xFFBDA6CE),
         foregroundColor: Colors.white,
       ),
       body: Center(

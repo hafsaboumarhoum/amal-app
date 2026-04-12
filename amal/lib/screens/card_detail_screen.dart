@@ -76,26 +76,22 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
   }
 
   Future<void> _stopAndPlayRecording() async {
-  final path = await _recorder.stop();
-  setState(() => _isRecording = false);
-  debugPrint('Recording path: $path');
-  if (path != null && File(path).existsSync()) {
-    debugPrint('File exists, playing...');
-    await _player.play(DeviceFileSource(path));
-    _incrementPractice();
-  } else {
-    debugPrint('File not found at path: $path');
+    final path = await _recorder.stop();
+    setState(() => _isRecording = false);
+    if (path != null && File(path).existsSync()) {
+      await _player.play(DeviceFileSource(path));
+      _incrementPractice();
+    }
   }
-}
 
   @override
   Widget build(BuildContext context) {
     final c = widget.card;
 
     return Scaffold(
-      backgroundColor: const Color(0xFFEDE8D0),
+      backgroundColor: const Color(0xFFF2EAE0),
       appBar: AppBar(
-        backgroundColor: const Color(0xFF6398A9),
+        backgroundColor: const Color(0xFFB4D3D9),
         foregroundColor: Colors.white,
       ),
       body: SingleChildScrollView(
@@ -112,8 +108,9 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                 errorBuilder: (_, __, ___) => Container(
                   height: 220,
                   width: 220,
-                  color: Colors.grey[200],
-                  child: const Icon(Icons.image, size: 80),
+                  color: const Color(0xFFB4D3D9).withOpacity(0.2),
+                  child: const Icon(Icons.image,
+                      size: 80, color: Color(0xFFB4D3D9)),
                 ),
               ),
             ),
@@ -142,7 +139,7 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
               label: const Text('استمع بالعربية',
                   style: TextStyle(fontSize: 18)),
               style: ElevatedButton.styleFrom(
-                backgroundColor: const Color(0xFF6398A9),
+                backgroundColor: const Color(0xFFB4D3D9),
                 foregroundColor: Colors.white,
                 padding: const EdgeInsets.symmetric(
                     horizontal: 32, vertical: 14),
@@ -158,7 +155,7 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
               label: const Text('Listen in English',
                   style: TextStyle(fontSize: 18)),
               style: ElevatedButton.styleFrom(
-                backgroundColor: const Color(0xFF6398A9),
+                backgroundColor: const Color(0xFFB4D3D9),
                 foregroundColor: Colors.white,
                 padding: const EdgeInsets.symmetric(
                     horizontal: 32, vertical: 14),
@@ -181,7 +178,7 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
               ),
               style: ElevatedButton.styleFrom(
                 backgroundColor:
-                    _isRecording ? Colors.red : const Color(0xFF96C7B3),
+                    _isRecording ? Colors.red : const Color(0xFFBDA6CE),
                 foregroundColor: Colors.white,
                 padding: const EdgeInsets.symmetric(
                     horizontal: 32, vertical: 14),

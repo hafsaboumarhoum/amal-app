@@ -12,26 +12,28 @@ class ChecklistScreen extends StatefulWidget {
 }
 
 class _ChecklistScreenState extends State<ChecklistScreen> {
-  Map<int, bool> _answers = {};
+  final Map<int, bool> _answers = {};
 
   @override
   Widget build(BuildContext context) {
     final isArabic = widget.language == 'ar';
 
     return Scaffold(
-      backgroundColor: const Color(0xFFEDE8D0),
+      backgroundColor: const Color(0xFFF2EAE0),
       appBar: AppBar(
         title: Text(
           isArabic ? 'قائمة العلامات المبكرة' : 'Early Signs Checklist',
         ),
-        backgroundColor: const Color(0xFF96C7B3),
+        backgroundColor: const Color(0xFFB4D3D9),
         foregroundColor: Colors.white,
       ),
       body: FutureBuilder<List<ChecklistItem>>(
         future: ChecklistService.loadItems(),
         builder: (context, snapshot) {
           if (!snapshot.hasData) {
-            return const Center(child: CircularProgressIndicator());
+            return const Center(
+                child: CircularProgressIndicator(
+                    color: Color(0xFFBDA6CE)));
           }
           final items = snapshot.data!;
           return Column(
@@ -44,6 +46,7 @@ class _ChecklistScreenState extends State<ChecklistScreen> {
                     final item = items[index];
                     return Card(
                       margin: const EdgeInsets.only(bottom: 12),
+                      color: Colors.white,
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(12),
                       ),
@@ -63,11 +66,11 @@ class _ChecklistScreenState extends State<ChecklistScreen> {
                               ? ChecklistService.ageGroupArabic[item.ageGroup]!
                               : item.ageGroup,
                           style: const TextStyle(
-                            color: Color(0xFF96C7B3),
+                            color: Color(0xFFBDA6CE),
                             fontWeight: FontWeight.w600,
                           ),
                         ),
-                        activeColor: const Color(0xFF96C7B3),
+                        activeColor: const Color(0xFFBDA6CE),
                         controlAffinity: ListTileControlAffinity.leading,
                       ),
                     );
@@ -92,7 +95,7 @@ class _ChecklistScreenState extends State<ChecklistScreen> {
                     );
                   },
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: const Color(0xFF96C7B3),
+                    backgroundColor: const Color(0xFFBDA6CE),
                     foregroundColor: Colors.white,
                     minimumSize: const Size(double.infinity, 52),
                     shape: RoundedRectangleBorder(

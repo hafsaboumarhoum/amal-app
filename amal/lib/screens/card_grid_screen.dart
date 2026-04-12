@@ -17,19 +17,21 @@ class CardGridScreen extends StatelessWidget {
     final isArabic = language == 'ar';
 
     return Scaffold(
-      backgroundColor: const Color(0xFFEDE8D0),
+      backgroundColor: const Color(0xFFF2EAE0),
       appBar: AppBar(
         title: Text(
           isArabic ? CardService.categoryArabic[category]! : category,
         ),
-        backgroundColor: const Color(0xFF6398A9),
+        backgroundColor: const Color(0xFFB4D3D9),
         foregroundColor: Colors.white,
       ),
       body: FutureBuilder<List<VocabCard>>(
         future: CardService.getByCategory(category),
         builder: (context, snapshot) {
           if (!snapshot.hasData) {
-            return const Center(child: CircularProgressIndicator());
+            return const Center(
+                child: CircularProgressIndicator(
+                    color: Color(0xFFBDA6CE)));
           }
           final cards = snapshot.data!;
           if (cards.isEmpty) {
@@ -73,8 +75,9 @@ class CardGridScreen extends StatelessWidget {
                             card.imagePath,
                             fit: BoxFit.cover,
                             errorBuilder: (_, __, ___) => Container(
-                              color: Colors.grey[200],
-                              child: const Icon(Icons.image, size: 40),
+                              color: const Color(0xFFB4D3D9).withOpacity(0.2),
+                              child: const Icon(Icons.image,
+                                  size: 40, color: Color(0xFFB4D3D9)),
                             ),
                           ),
                         ),
