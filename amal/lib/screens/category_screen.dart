@@ -22,19 +22,19 @@ class CategoryScreen extends StatelessWidget {
     };
 
     final categoryColors = {
-      'Food': const Color(0xFFD7897F),
-      'Animals': const Color(0xFF96C7B3),
-      'Emotions': const Color(0xFFF9B95C),
-      'Daily Life': const Color(0xFF6398A9),
-      'Colors': const Color(0xFFD7897F),
-      'Numbers': const Color(0xFF96C7B3),
+      'Food': const Color(0xFFB4D3D9),
+      'Animals': const Color(0xFFBDA6CE),
+      'Emotions': const Color(0xFF9B8EC7),
+      'Daily Life': const Color(0xFFB4D3D9),
+      'Colors': const Color(0xFFBDA6CE),
+      'Numbers': const Color(0xFF9B8EC7),
     };
 
     return Scaffold(
-      backgroundColor: const Color(0xFFEDE8D0),
+      backgroundColor: const Color(0xFFF2EAE0),
       appBar: AppBar(
         title: Text(isArabic ? 'المكتبة البصرية' : 'Visual Library'),
-        backgroundColor: const Color(0xFF6398A9),
+        backgroundColor: const Color(0xFFB4D3D9),
         foregroundColor: Colors.white,
       ),
       body: Padding(
@@ -46,18 +46,18 @@ class CategoryScreen extends StatelessWidget {
           children: categories.map((cat) {
             return GestureDetector(
               onTap: () {
-  Navigator.push(
-    context,
-    MaterialPageRoute(
-      builder: (_) => CardGridScreen(
-        category: cat,
-        language: language,
-      ),
-    ),
-  );
-},
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (_) => CardGridScreen(
+                      category: cat,
+                      language: language,
+                    ),
+                  ),
+                );
+              },
               child: Card(
-                elevation: 3,
+                elevation: 2,
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(16),
                 ),

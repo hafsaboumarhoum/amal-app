@@ -16,39 +16,39 @@ class HomeScreen extends StatelessWidget {
         'icon': Icons.image,
         'title_ar': 'المكتبة البصرية',
         'title_en': 'Visual Library',
-        'color': const Color(0xFF6398A9),
+        'color': const Color(0xFFB4D3D9),
       },
       {
         'icon': Icons.quiz,
         'title_ar': 'تحدي الصوت',
         'title_en': 'Audio Challenge',
-        'color': const Color(0xFF6398A9),
+        'color': const Color(0xFFB4D3D9),
       },
       {
         'icon': Icons.local_hospital,
         'title_ar': 'دليل المختصين',
         'title_en': 'Specialist Directory',
-        'color': const Color(0xFFD7897F),
+        'color': const Color(0xFFBDA6CE),
       },
       {
         'icon': Icons.lightbulb,
         'title_ar': 'نصائح يومية',
         'title_en': 'Daily Guide',
-        'color': const Color(0xFFF9B95C),
+        'color': const Color(0xFF9B8EC7),
       },
       {
         'icon': Icons.checklist,
         'title_ar': 'قائمة العلامات المبكرة',
         'title_en': 'Early Signs Checklist',
-        'color': const Color(0xFF96C7B3),
+        'color': const Color(0xFFBDA6CE),
       },
     ];
 
     return Scaffold(
-      backgroundColor: const Color(0xFFEDE8D0),
+      backgroundColor: const Color(0xFFF2EAE0),
       appBar: AppBar(
         title: Text(isArabic ? 'بلوم' : 'Bloom'),
-        backgroundColor: const Color(0xFF6398A9),
+        backgroundColor: const Color(0xFFB4D3D9),
         foregroundColor: Colors.white,
         actions: [
           TextButton(
@@ -77,7 +77,8 @@ class HomeScreen extends StatelessWidget {
           itemBuilder: (context, index) {
             final f = features[index];
             return Card(
-              elevation: 2,
+              elevation: 1,
+              color: Colors.white,
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(16),
               ),
@@ -87,7 +88,7 @@ class HomeScreen extends StatelessWidget {
                   vertical: 12,
                 ),
                 leading: CircleAvatar(
-                  backgroundColor: (f['color'] as Color).withOpacity(0.15),
+                  backgroundColor: (f['color'] as Color).withOpacity(0.2),
                   child: Icon(
                     f['icon'] as IconData,
                     color: f['color'] as Color,
@@ -102,7 +103,8 @@ class HomeScreen extends StatelessWidget {
                     fontWeight: FontWeight.w600,
                   ),
                 ),
-                trailing: const Icon(Icons.arrow_forward_ios, size: 16),
+                trailing: const Icon(Icons.arrow_forward_ios,
+                    size: 16, color: Color(0xFFBDA6CE)),
                 onTap: () {
                   if (index == 0) {
                     Navigator.push(
@@ -122,7 +124,8 @@ class HomeScreen extends StatelessWidget {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (_) => ChecklistIntroScreen(language: language),
+                        builder: (_) =>
+                            ChecklistIntroScreen(language: language),
                       ),
                     );
                   }

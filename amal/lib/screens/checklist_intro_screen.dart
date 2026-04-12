@@ -11,12 +11,12 @@ class ChecklistIntroScreen extends StatelessWidget {
     final isArabic = language == 'ar';
 
     return Scaffold(
-      backgroundColor: const Color(0xFFEDE8D0),
+      backgroundColor: const Color(0xFFF2EAE0),
       appBar: AppBar(
         title: Text(
           isArabic ? 'قائمة العلامات المبكرة' : 'Early Signs Checklist',
         ),
-        backgroundColor: const Color(0xFF96C7B3),
+        backgroundColor: const Color(0xFFB4D3D9),
         foregroundColor: Colors.white,
       ),
       body: Padding(
@@ -27,7 +27,7 @@ class ChecklistIntroScreen extends StatelessWidget {
             const Icon(
               Icons.checklist,
               size: 80,
-              color: Color(0xFF96C7B3),
+              color: Color(0xFFBDA6CE),
             ),
             const SizedBox(height: 24),
             Text(
@@ -59,7 +59,7 @@ class ChecklistIntroScreen extends StatelessWidget {
                 );
               },
               style: ElevatedButton.styleFrom(
-                backgroundColor: const Color(0xFF96C7B3),
+                backgroundColor: const Color(0xFFBDA6CE),
                 foregroundColor: Colors.white,
                 padding: const EdgeInsets.symmetric(
                   horizontal: 48,
