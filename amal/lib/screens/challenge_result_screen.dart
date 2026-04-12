@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'challenge_screen.dart';
+import 'show_me_screen.dart';
 
 class ChallengeResultScreen extends StatelessWidget {
   final int score;
@@ -25,7 +26,7 @@ class ChallengeResultScreen extends StatelessWidget {
     final isArabic = language == 'ar';
 
     return Scaffold(
-      backgroundColor: const Color(0xFFEDE8D0),
+      backgroundColor: const Color(0xFFF2EAE0),
       body: Center(
         child: Padding(
           padding: const EdgeInsets.all(32),
@@ -39,7 +40,7 @@ class ChallengeResultScreen extends StatelessWidget {
                   return Icon(
                     i < _stars ? Icons.star : Icons.star_border,
                     size: 60,
-                    color: const Color(0xFFF9B95C),
+                    color: const Color(0xFFBDA6CE),
                   );
                 }),
               ),
@@ -53,7 +54,7 @@ class ChallengeResultScreen extends StatelessWidget {
               Text(
                 isArabic ? 'أحسنت!' : 'Great job!',
                 style: const TextStyle(
-                    fontSize: 24, color: Color(0xFF6398A9)),
+                    fontSize: 24, color: Color(0xFFB4D3D9)),
               ),
               const SizedBox(height: 40),
               ElevatedButton.icon(
@@ -68,7 +69,7 @@ class ChallengeResultScreen extends StatelessWidget {
                 icon: const Icon(Icons.replay),
                 label: Text(isArabic ? 'العب مرة أخرى' : 'Play Again'),
                 style: ElevatedButton.styleFrom(
-                  backgroundColor: const Color(0xFF6398A9),
+                  backgroundColor: const Color(0xFFB4D3D9),
                   foregroundColor: Colors.white,
                   padding: const EdgeInsets.symmetric(
                       horizontal: 32, vertical: 14),
@@ -77,16 +78,20 @@ class ChallengeResultScreen extends StatelessWidget {
                 ),
               ),
               const SizedBox(height: 12),
-              OutlinedButton.icon(
+              ElevatedButton.icon(
                 onPressed: () {
-                  ScaffoldMessenger.of(context).showSnackBar(
-                    const SnackBar(
-                        content: Text('Show Me! coming next week!')),
+                  Navigator.pushReplacement(
+                    context,
+                    MaterialPageRoute(
+                      builder: (_) => ShowMeScreen(language: language),
+                    ),
                   );
                 },
                 icon: const Icon(Icons.camera_alt),
                 label: Text(isArabic ? 'جرب أرني!' : 'Try Show Me!'),
-                style: OutlinedButton.styleFrom(
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: const Color(0xFFBDA6CE),
+                  foregroundColor: Colors.white,
                   padding: const EdgeInsets.symmetric(
                       horizontal: 32, vertical: 14),
                   shape: RoundedRectangleBorder(
@@ -98,7 +103,10 @@ class ChallengeResultScreen extends StatelessWidget {
                 onPressed: () {
                   Navigator.popUntil(context, (route) => route.isFirst);
                 },
-                child: Text(isArabic ? 'العودة للرئيسية' : 'Back to Home'),
+                child: Text(
+                  isArabic ? 'العودة للرئيسية' : 'Back to Home',
+                  style: const TextStyle(color: Color(0xFF9B8EC7)),
+                ),
               ),
             ],
           ),

@@ -60,7 +60,6 @@ class _ChallengeScreenState extends State<ChallengeScreen> {
     _selectedIndex = null;
     setState(() {});
 
-    // Auto-play audio when question loads
     Future.delayed(const Duration(milliseconds: 300), () => _playCurrentWord());
   }
 
@@ -104,15 +103,17 @@ class _ChallengeScreenState extends State<ChallengeScreen> {
 
     if (_correctCard == null) {
       return const Scaffold(
-        body: Center(child: CircularProgressIndicator()),
+        backgroundColor: Color(0xFFF2EAE0),
+        body: Center(
+            child: CircularProgressIndicator(color: Color(0xFFBDA6CE))),
       );
     }
 
     return Scaffold(
-      backgroundColor: const Color(0xFFEDE8D0),
+      backgroundColor: const Color(0xFFF2EAE0),
       appBar: AppBar(
         title: Text(isArabic ? 'تحدي الصوت' : 'Audio Challenge'),
-        backgroundColor: const Color(0xFF6398A9),
+        backgroundColor: const Color(0xFFB4D3D9),
         foregroundColor: Colors.white,
         actions: [
           Padding(
@@ -120,7 +121,8 @@ class _ChallengeScreenState extends State<ChallengeScreen> {
             child: Center(
               child: Text(
                 '${_currentQuestion + 1}/$_totalQuestions | $_score ⭐',
-                style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+                style: const TextStyle(
+                    fontSize: 16, fontWeight: FontWeight.bold),
               ),
             ),
           ),
@@ -136,10 +138,11 @@ class _ChallengeScreenState extends State<ChallengeScreen> {
                 width: 100,
                 height: 100,
                 decoration: BoxDecoration(
-                  color: const Color(0xFF6398A9),
+                  color: const Color(0xFFBDA6CE),
                   borderRadius: BorderRadius.circular(50),
                 ),
-                child: const Icon(Icons.volume_up, size: 48, color: Colors.white),
+                child: const Icon(Icons.volume_up,
+                    size: 48, color: Colors.white),
               ),
             ),
             const SizedBox(height: 8),
@@ -162,9 +165,9 @@ class _ChallengeScreenState extends State<ChallengeScreen> {
                   Color? borderColor;
                   if (_selectedAnswer != null) {
                     if (isCorrect) {
-                      borderColor = Colors.green;
+                      borderColor = const Color(0xFFB4D3D9);
                     } else if (_selectedIndex == index) {
-                      borderColor = Colors.red;
+                      borderColor = const Color(0xFF9B8EC7);
                     }
                   }
                   return GestureDetector(
@@ -182,7 +185,7 @@ class _ChallengeScreenState extends State<ChallengeScreen> {
                           card.imagePath,
                           fit: BoxFit.cover,
                           errorBuilder: (_, __, ___) => Container(
-                            color: Colors.grey[200],
+                            color: const Color(0xFFB4D3D9).withOpacity(0.2),
                             child: Center(child: Text(card.wordEnglish)),
                           ),
                         ),
