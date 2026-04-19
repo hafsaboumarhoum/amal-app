@@ -1,0 +1,82 @@
+[
+  {
+    "id": 1,
+    "title_en": "What is autism spectrum disorder (ASD)?",
+    "title_ar": "ما هو طيف التوحد؟",
+    "content_en": "Autism spectrum disorder (ASD) is a condition that affects how a child communicates, interacts with others, and understands the world around them. It usually appears in early childhood (before age 2-3). It is called a 'spectrum' because every child is different — some may need more support, while others need less.\n\nChildren with autism may experience the world in a unique way.\n\n💡 Important: Autism is not a disease and it is not caused by parenting.",
+    "content_ar": "التوحّد هو حالة كتأثر على طريقة ديال الطفل فالتواصل، فالتعامل مع الناس، وكيفاش كيشوف وكيحس بالعالم ديالو. غالباً كيبان فسنين اللولة (قبل 2 حتى 3 سنين). كيتسمّى 'طيف' حيث كل طفل مختلف على الآخر.\n\nالطفل اللي عندو توحّد كيقدر يحس بالعالم بطريقة مختلفة.\n\n💡 مهم: التوحّد ماشي مرض وماشي بسبب التربية.",
+    "icon": "info"
+  },
+  {
+    "id": 2,
+    "title_en": "What are the early signs of autism?",
+    "title_ar": "ما هي العلامات المبكرة للتوحد؟",
+    "content_en": "Early signs of autism can appear in the first 2-3 years:\n\n• 6-9 months: little eye contact, few smiles\n• 12 months: does not respond to name, no babbling\n• 15-18 months: few or no words\n• 2-3 years: no pretend play, difficulty speaking\n\nOther signs:\n• Repetitive movements (hand flapping, rocking)\n• Strong need for routine\n• Strong reactions to sounds, lights, or textures\n• Very focused interests\n\n👉 What to do: If you notice several of these signs, consider speaking to a specialist early.",
+    "content_ar": "العلامات اللولة ديال التوحّد كتقدر تبان فـ 2 حتى 3 سنين:\n\n• 6-9 شهور: تواصل بصري قليل، ضحك قليل\n• 12 شهر: ماكيجاوبش على سميتو، ماكيهدرش\n• 15-18 شهر: كلمات قليلة أو منعدمة\n• 2-3 سنين: ماكيديرش لعب خيالي، صعوبة فالهضرة\n\nعلامات أخرى:\n• حركات متكررة (بحال تحريك اليدين أو التمايل)\n• التعلّق بروتين معيّن\n• حساسية قوية للصوت، الضو، أو الملمس\n\n👉 شنو تديري: إلا لاحظتي بزاف ديال هاد العلامات، من الأحسن تهضري مع مختص بكري.",
+    "icon": "visibility"
+  },
+  {
+    "id": 3,
+    "title_en": "How is autism diagnosed?",
+    "title_ar": "كيفاش كيتشخص التوحد؟",
+    "content_en": "Autism is diagnosed by specialists such as doctors or psychologists. There is no blood test. They observe the child's behavior, communication, and development, and ask parents questions.\n\nEarly diagnosis is very important because it helps the child receive support as soon as possible.\n\n👉 What to do: If you are concerned, don't wait — early support can make a big difference.",
+    "content_ar": "التوحّد كيتشخّص عند مختصين بحال الطبيب ولا عند الأخصائي النفسي. ماكاينش تحليل ديال الدم. كيشوفو السلوك ديال الطفل، التواصل ديالو، والتطور ديالو.\n\nالتشخيص بكري مهم بزاف حيث كيساعد الطفل ياخذ الدعم فأسرع وقت ممكن.\n\n👉 شنو تديري: إلا كان عندك شك، ما تستنايش — الدعم بكري كيعاون بزاف.",
+    "icon": "medical_services"
+  },
+  {
+    "id": 4,
+    "title_en": "What causes autism?",
+    "title_ar": "شنو هي أسباب التوحد؟",
+    "content_en": "The exact cause of autism is not fully known. It is believed to come from a combination of genetic factors and environmental factors.\n\nSome factors may increase the chances:\n• Having a family member with autism\n• Certain genetic conditions\n• Older parents\n• Very low birth weight\n\n💡 Important: Autism is not caused by something parents did. Having these factors does not mean a child will definitely have autism.",
+    "content_ar": "السبب ديال التوحّد مازال ما معروفش بالضبط، ولكن كيبان أنه كيجمع بين عوامل وراثية وعوامل من البيئة ديال الطفل.\n\nكاين بعض الحوايج اللي ممكن يزيدو الاحتمال:\n• وجود شي حد فالعائلة عندو توحّد\n• بعض الحالات الجينية\n• الوالدين كبار فالعمر\n• الوزن القليل بزاف عند الولادة\n\n💡 مهم: التوحّد ماشي بسبب شي حاجة داروها الوالدين.",
+    "icon": "science"
+  },
+  {
+    "id": 5,
+    "title_en": "How can I support my child at home?",
+    "title_ar": "كيفاش نعاون طفلي فالدار؟",
+    "content_en": "Supporting a child with autism at home means creating a calm, structured, and predictable environment. Use simple, clear language, speak slowly, and support communication with gestures, pictures, or visual tools.\n\nKeeping a daily routine is very important. Pay attention to sensory sensitivities and reduce triggers when possible. Encourage positive behavior with praise and patience.\n\n💡 Stay patient and consistent, and don't hesitate to seek support from professionals when needed.",
+    "content_ar": "باش تعاوني طفلك فدار، خاصك توفري ليه جو هادئ ومنظّم. هضري معاه بطريقة بسيطة وواضحة وبشوية، واستعملي حتى الصور ولا الإشارات.\n\nالروتين اليومي مهم بزاف. ردي البال حتى للحساسيات ديالو وحاولي تنقصي منهم. شجّعي السلوك الزوين بالكلام الزوين والصبر.\n\n💡 كوني صبورة ومتواصلة فالتعامل ديالك معاه.",
+    "icon": "home"
+  },
+  {
+    "id": 6,
+    "title_en": "What strategies help with communication difficulties?",
+    "title_ar": "شنو الطرق اللي كتعاون فصعوبات التواصل؟",
+    "content_en": "Helping a child with autism communicate is about creating a supportive environment.\n\n• Use simple and clear language, speak slowly\n• Give the child extra time to respond\n• Use visual supports like pictures or communication cards\n• Follow the child's interests\n• Accept all forms of communication\n• Respond positively to any attempt to communicate\n• Reduce distractions and sensory overload\n\n💡 Important: Communication is different for every child. The goal is connection, not perfection.",
+    "content_ar": "باش تعاوني طفلك يتواصل مزيان، خاصك توفري ليه بيئة هادئة وآمنة.\n\n• هضري معاه بكلام بسيط وواضح وبشوية\n• عطيوه الوقت باش يجاوب بلا ضغط\n• استعملي الصور، الإشارات، ولا كروت التواصل\n• تبعي اهتمامو\n• قبلي أي طريقة ديال التواصل\n• شجعي أي محاولة ديالو\n• نقصي من الضوضاء والحوايج اللي كتشتتو\n\n💡 مهم: الهدف هو التواصل والفهم، ماشي الكمال.",
+    "icon": "chat"
+  },
+  {
+    "id": 7,
+    "title_en": "How can I handle sensory sensitivities?",
+    "title_ar": "كيفاش نتعامل مع الحساسيات الحسية؟",
+    "content_en": "Many children with autism experience the world differently through their senses. Sounds, lights, smells, or textures can feel too strong or not strong enough.\n\nCommon signs:\n• Covering ears or avoiding loud sounds\n• Being disturbed by bright lights or strong smells\n• Disliking certain clothing or foods\n• Seeking movement like spinning or rocking\n\nHow to help:\n• Reduce loud noise and bright lights\n• Offer calm, quiet spaces for breaks\n• Use comfortable clothing\n• Respect the child's reactions\n\n💡 Important: Sensory differences are not 'bad behavior' — they are how the child experiences the world.",
+    "content_ar": "بزاف ديال الأطفال اللي عندهم توحّد كيشوفو العالم بطريقة مختلفة من ناحية الحواس.\n\nعلامات ممكن تبان:\n• كيغطي ودنيه من الصوت\n• كيقلق من الضو القوي ولا الروائح القوية\n• ماكيبغيش بعض الملابس ولا الماكلة\n• كيبغي يتحرك بزاف بحال الدوران أو الهز\n\nكيفاش نعاونوه:\n• ننقصو الضوضاء والضو القوي\n• نوفرولو بلاصة هادئة\n• نختارو ليه ملابس مريحة\n• نحترمو ردة الفعل ديالو\n\n💡 مهم: هاد الحساسيات ماشي تصرفات خايبة.",
+    "icon": "hearing"
+  },
+  {
+    "id": 8,
+    "title_en": "How can I help my child develop social skills?",
+    "title_ar": "كيفاش نعاون طفلي يطور المهارات الاجتماعية؟",
+    "content_en": "Children with autism may find social interaction difficult, but they can learn step by step.\n\n• Teach social skills step by step\n• Model behavior (greet, share, take turns)\n• Encourage turn-taking activities\n• Use visual supports or social stories\n• Give positive feedback when the child tries\n• Teach understanding of emotions gradually\n• Encourage simple group activities\n\n💡 Important: Social skills are learned over time. Every small step is progress.",
+    "content_ar": "الأطفال اللي عندهم توحّد ممكن يلقاو صعوبة فالتواصل مع الناس، ولكن يقدرو يتعلمو بشوية بشوية.\n\n• نقسمو المهارات لخطوات صغار وبسيطة\n• نوريه كيفاش يدير (السلام، المشاركة، الدور)\n• نلعبو ألعاب فيها الدور\n• نستعملو صور ولا قصص\n• نشجعوه ونمدحوه ملي يحاول\n• نعلموه بشوية كيفاش يفهم المشاعر\n\n💡 مهم: تعلم التواصل كياخذ وقت، وكل خطوة صغيرة هي تقدم مهم.",
+    "icon": "people"
+  },
+  {
+    "id": 9,
+    "title_en": "What therapies are available for children with autism?",
+    "title_ar": "شنو هي العلاجات المتاحة للأطفال اللي عندهم توحد؟",
+    "content_en": "There are different types of therapies that can help children with autism.\n\n• Speech therapy: helps improve communication and language skills\n• Occupational therapy: helps with daily activities like dressing and eating\n• Behavioral therapy (ABA): helps learn positive behaviors\n• Social skills therapy: helps interact with others\n• Play therapy: uses play to express emotions and learn skills\n\n💡 Important: There is no single 'best' therapy. Many children benefit from a combination adapted to their needs.",
+    "content_ar": "كاينين أنواع مختلفة ديال العلاج اللي كيعاونو الأطفال اللي عندهم توحّد.\n\n• علاج النطق: كيساعد الطفل يهضر ويتواصل مزيان\n• العلاج الوظيفي: كيساعد فحوايج يومية بحال اللبس والماكلة\n• العلاج السلوكي: كيعلم الطفل سلوكات إيجابية\n• علاج المهارات الاجتماعية: كيعلم الطفل كيفاش يتعامل مع الناس\n• العلاج باللعب: كيعتمد على اللعب باش الطفل يتعلم\n\n💡 مهم: ماكاينش علاج واحد مناسب للجميع.",
+    "icon": "healing"
+  },
+  {
+    "id": 10,
+    "title_en": "How can I manage challenging behaviors safely?",
+    "title_ar": "كيفاش نتعامل مع السلوكيات الصعبة بأمان؟",
+    "content_en": "Some autistic children may show challenging behaviors when overwhelmed. A meltdown is not bad behavior — it is a response to sensory or emotional overload.\n\nDuring a meltdown:\n• Stay calm and speak very little\n• Reduce noise and sensory triggers\n• Give the child space\n• Make sure the child is safe\n\nAfter the meltdown:\n• Allow time to rest\n• Do not punish the child\n• Try to identify what triggered it\n• Plan ahead to reduce future triggers\n\n💡 Important: Challenging behaviors are often a way of coping, not intentional misbehavior.",
+    "content_ar": "بعض الأطفال اللي عندهم توحّد ممكن يبان عليهم سلوكيات صعيبة ملي كيكونو متوترين. النوبة ماشي تصرف خايب، هي رد فعل على ضغط قوي.\n\nوقت النوبة:\n• نبقاو هاديين وما نهدروش بزاف\n• ننقصو من الضوضاء والضو\n• نعطيوه مساحة\n• نتأكدو أنه فأمان\n\nمن بعد النوبة:\n• نخليوه يرتاح\n• ما نعاقبوهش\n• نحاولو نفهمو شنو كان السبب\n\n💡 مهم: هاد السلوكيات غالباً كتكون طريقة ديال الطفل باش يتعامل مع ضغط كبير.",
+    "icon": "psychology"
+  }
+]

@@ -10,6 +10,11 @@
     "sign_arabic": "لا يبتسم أو يستجيب للوجوه المألوفة"
   },
   {
+    "age_group": "0-12m",
+    "sign_english": "Does not follow moving objects with their eyes",
+    "sign_arabic": "لا يتبع الأجسام المتحركة بعينيه"
+  },
+  {
     "age_group": "12-24m",
     "sign_english": "Does not point to objects to show interest",
     "sign_arabic": "لا يشير إلى الأشياء لإظهار الاهتمام"
@@ -20,6 +25,26 @@
     "sign_arabic": "لا يقول كلمات مفردة بحلول 16 شهراً"
   },
   {
+    "age_group": "12-24m",
+    "sign_english": "Does not respond to their name by 12 months",
+    "sign_arabic": "لا يستجيب لاسمه بحلول عمر 12 شهراً"
+  },
+  {
+    "age_group": "12-24m",
+    "sign_english": "Avoids physical contact or cuddling",
+    "sign_arabic": "يتجنب التلامس الجسدي أو العناق"
+  },
+  {
+    "age_group": "12-24m",
+    "sign_english": "Does not look when you point at something ('Joint Attention')",
+    "sign_arabic": "لا ينظر عندما تشير إلى شيء ما (الاهتمام المشترك)"
+  },
+  {
+    "age_group": "12-24m",
+    "sign_english": "Walks on toes or has an unusual walking gait",
+    "sign_arabic": "يمشي على أطراف أصابعه أو لديه مشية غير عادية"
+  },
+  {
     "age_group": "24-36m",
     "sign_english": "Does not use two-word phrases",
     "sign_arabic": "لا يستخدم عبارات من كلمتين"
@@ -28,5 +53,50 @@
     "age_group": "24-36m",
     "sign_english": "Loses previously acquired language skills",
     "sign_arabic": "يفقد مهارات لغوية اكتسبها سابقاً"
+  },
+  {
+    "age_group": "24-36m",
+    "sign_english": "Repeats words or phrases exactly (Echolalia)",
+    "sign_arabic": "يكرر الكلمات أو العبارات بدقة (ترديد الكلام)"
+  },
+  {
+    "age_group": "24-36m",
+    "sign_english": "Does not engage in 'pretend' play (e.g., feeding a doll)",
+    "sign_arabic": "لا يشارك في اللعب التخيلي (مثل إطعام دمية)"
+  },
+  {
+    "age_group": "24-36m",
+    "sign_english": "Lines up toys or objects instead of playing with them",
+    "sign_arabic": "يصف الألعاب أو الأشياء في خطوط بدلاً من اللعب بها"
+  },
+  {
+    "age_group": "24-36m",
+    "sign_english": "Does not show interest in other children",
+    "sign_arabic": "لا يظهر اهتماماً بالأطفال الآخرين"
+  },
+  {
+    "age_group": "36m+",
+    "sign_english": "Has difficulty understanding other people's feelings",
+    "sign_arabic": "يواجه صعوبة في فهم مشاعر الآخرين"
+  },
+  {
+    "age_group": "36m+",
+    "sign_english": "Gets very upset by minor changes in routine",
+    "sign_arabic": "ينزعج بشدة من التغييرات الطفيفة في الروتين"
+  },
+  {
+    "age_group": "All Ages",
+    "sign_english": "Exhibits repetitive behaviors (like flapping hands or spinning)",
+    "sign_arabic": "يظهر سلوكيات متكررة (مثل رفرفة اليدين أو الدوران)"
+  },
+  {
+    "age_group": "All Ages",
+    "sign_english": "Has unusual reactions to sounds, smells, or tastes",
+    "sign_arabic": "لديه ردود فعل غير عادية تجاه الأصوات أو الروائح أو الأذواق"
+  },
+  {
+    "age_group": "All Ages",
+    "sign_english": "Overly attached to unusual objects (like a piece of string or a remote)",
+    "sign_arabic": "متعلق بشكل مفرط بأشياء غير عادية (مثل قطعة خيط أو جهاز تحكم)"
   }
 ]

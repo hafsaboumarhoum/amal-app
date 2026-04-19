@@ -1,6 +1,6 @@
 import 'dart:math';
 import 'package:flutter/material.dart';
-import 'package:audioplayers/audioplayers.dart';
+import 'package:flutter_tts/flutter_tts.dart';
 import '../services/card_service.dart';
 import 'challenge_result_screen.dart';
 
@@ -13,7 +13,7 @@ class ChallengeScreen extends StatefulWidget {
 }
 
 class _ChallengeScreenState extends State<ChallengeScreen> {
-  final AudioPlayer _player = AudioPlayer();
+  final FlutterTts _tts = FlutterTts();
   final Random _random = Random();
   List<VocabCard> _allCards = [];
   int _currentQuestion = 0;
@@ -27,7 +27,14 @@ class _ChallengeScreenState extends State<ChallengeScreen> {
   @override
   void initState() {
     super.initState();
+    _initTts();
     _loadCards();
+  }
+
+  Future<void> _initTts() async {
+    await _tts.setVolume(1.0);
+    await _tts.setPitch(1.0);
+    await _tts.setSpeechRate(0.5);
   }
 
   Future<void> _loadCards() async {
@@ -54,22 +61,28 @@ class _ChallengeScreenState extends State<ChallengeScreen> {
 
     final shuffled = List<VocabCard>.from(_allCards)..shuffle(_random);
     _correctCard = shuffled[0];
-    final wrongs = shuffled.where((c) => c.id != _correctCard!.id).take(2).toList();
+    final wrongs = shuffled
+        .where((c) => c.id != _correctCard!.id)
+        .take(2)
+        .toList();
     _options = [_correctCard!, ...wrongs]..shuffle(_random);
     _selectedAnswer = null;
     _selectedIndex = null;
     setState(() {});
 
-    Future.delayed(const Duration(milliseconds: 300), () => _playCurrentWord());
+    Future.delayed(
+        const Duration(milliseconds: 300), () => _playCurrentWord());
   }
 
   Future<void> _playCurrentWord() async {
     if (_correctCard == null) return;
-    final path = widget.language == 'ar'
-        ? _correctCard!.audioArabicPath
-        : _correctCard!.audioEnglishPath;
-    await _player.stop();
-    await _player.play(AssetSource(path.replaceFirst('assets/', '')));
+    if (widget.language == 'ar') {
+      await _tts.setLanguage('ar-SA');
+      await _tts.speak(_correctCard!.wordArabic);
+    } else {
+      await _tts.setLanguage('en-US');
+      await _tts.speak(_correctCard!.wordEnglish);
+    }
   }
 
   void _onAnswerTap(int index) {
@@ -93,7 +106,7 @@ class _ChallengeScreenState extends State<ChallengeScreen> {
 
   @override
   void dispose() {
-    _player.dispose();
+    _tts.stop();
     super.dispose();
   }
 
@@ -186,7 +199,16 @@ class _ChallengeScreenState extends State<ChallengeScreen> {
                           fit: BoxFit.cover,
                           errorBuilder: (_, __, ___) => Container(
                             color: const Color(0xFFB4D3D9).withOpacity(0.2),
-                            child: Center(child: Text(card.wordEnglish)),
+                            child: Center(
+                              child: Text(
+                                isArabic
+                                    ? card.wordArabic
+                                    : card.wordEnglish,
+                                textAlign: TextAlign.center,
+                                style: const TextStyle(
+                                    fontWeight: FontWeight.bold),
+                              ),
+                            ),
                           ),
                         ),
                       ),

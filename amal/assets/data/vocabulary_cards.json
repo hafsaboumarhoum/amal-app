@@ -1,13 +1,334 @@
-[
-  {
-    "id": "apple_001",
-    "word_arabic": "تفاحة",
-    "word_english": "Apple",
-    "image_path": "assets/images/cards/apple.png",
-    "audio_arabic_path": "assets/audio/apple_ar.mp3",
-    "audio_english_path": "assets/audio/apple_en.mp3",
-    "category": "Food",
-    "difficulty_level": 1,
-    "ml_labels": ["apple", "fruit", "food"]
-  }
-]
+{
+  "vocabulary_cards": [
+    {
+      "id": "apple_001",
+      "word_arabic": "تفاحة",
+      "word_english": "Apple",
+      "image_path": "assets/images/cards/apple.png",
+      "audio_arabic_path": "assets/audio/apple_ar.mp3",
+      "audio_english_path": "assets/audio/apple_en.mp3",
+      "category": "Food",
+      "difficulty_level": 1,
+      "ml_labels": ["apple", "fruit", "food"]
+    },
+    {
+      "id": "bread_002",
+      "word_arabic": "خبز",
+      "word_english": "Bread",
+      "image_path": "assets/images/cards/bread.png",
+      "audio_arabic_path": "assets/audio/bread_ar.mp3",
+      "audio_english_path": "assets/audio/bread_en.mp3",
+      "category": "Food",
+      "difficulty_level": 1,
+      "ml_labels": ["bread", "food"]
+    },
+    {
+      "id": "water_003",
+      "word_arabic": "ماء",
+      "word_english": "Water",
+      "image_path": "assets/images/cards/water.png",
+      "audio_arabic_path": "assets/audio/water_ar.mp3",
+      "audio_english_path": "assets/audio/water_en.mp3",
+      "category": "Food",
+      "difficulty_level": 1,
+      "ml_labels": ["water", "drink"]
+    },
+    {
+      "id": "milk_004",
+      "word_arabic": "حليب",
+      "word_english": "Milk",
+      "image_path": "assets/images/cards/milk.png",
+      "audio_arabic_path": "assets/audio/milk_ar.mp3",
+      "audio_english_path": "assets/audio/milk_en.mp3",
+      "category": "Food",
+      "difficulty_level": 1,
+      "ml_labels": ["milk", "drink"]
+    },
+    {
+      "id": "orange_005",
+      "word_arabic": "برتقال",
+      "word_english": "Orange",
+      "image_path": "assets/images/cards/orange.png",
+      "audio_arabic_path": "assets/audio/orange_ar.mp3",
+      "audio_english_path": "assets/audio/orange_en.mp3",
+      "category": "Food",
+      "difficulty_level": 1,
+      "ml_labels": ["orange", "fruit"]
+    },
+    {
+      "id": "school_006",
+      "word_arabic": "مدرسة",
+      "word_english": "School",
+      "image_path": "assets/images/cards/school.png",
+      "audio_arabic_path": "assets/audio/school_ar.mp3",
+      "audio_english_path": "assets/audio/school_en.mp3",
+      "category": "Education",
+      "difficulty_level": 1,
+      "ml_labels": ["school", "education"]
+    },
+    {
+      "id": "book_007",
+      "word_arabic": "كتاب",
+      "word_english": "Book",
+      "image_path": "assets/images/cards/book.png",
+      "audio_arabic_path": "assets/audio/book_ar.mp3",
+      "audio_english_path": "assets/audio/book_en.mp3",
+      "category": "Education",
+      "difficulty_level": 1,
+      "ml_labels": ["book", "reading"]
+    },
+    {
+      "id": "pen_008",
+      "word_arabic": "قلم",
+      "word_english": "Pen",
+      "image_path": "assets/images/cards/pen.png",
+      "audio_arabic_path": "assets/audio/pen_ar.mp3",
+      "audio_english_path": "assets/audio/pen_en.mp3",
+      "category": "Education",
+      "difficulty_level": 1,
+      "ml_labels": ["pen", "writing"]
+    },
+    {
+      "id": "table_009",
+      "word_arabic": "طاولة",
+      "word_english": "Table",
+      "image_path": "assets/images/cards/table.png",
+      "audio_arabic_path": "assets/audio/table_ar.mp3",
+      "audio_english_path": "assets/audio/table_en.mp3",
+      "category": "Objects",
+      "difficulty_level": 1,
+      "ml_labels": ["table", "furniture"]
+    },
+    {
+      "id": "chair_010",
+      "word_arabic": "كرسي",
+      "word_english": "Chair",
+      "image_path": "assets/images/cards/chair.png",
+      "audio_arabic_path": "assets/audio/chair_ar.mp3",
+      "audio_english_path": "assets/audio/chair_en.mp3",
+      "category": "Objects",
+      "difficulty_level": 1,
+      "ml_labels": ["chair", "furniture"]
+    },
+    {
+      "id": "dog_011",
+      "word_arabic": "كلب",
+      "word_english": "Dog",
+      "image_path": "assets/images/cards/dog.png",
+      "audio_arabic_path": "assets/audio/dog_ar.mp3",
+      "audio_english_path": "assets/audio/dog_en.mp3",
+      "category": "Animals",
+      "difficulty_level": 1,
+      "ml_labels": ["dog", "animal"]
+    },
+    {
+      "id": "cat_012",
+      "word_arabic": "قطة",
+      "word_english": "Cat",
+      "image_path": "assets/images/cards/cat.png",
+      "audio_arabic_path": "assets/audio/cat_ar.mp3",
+      "audio_english_path": "assets/audio/cat_en.mp3",
+      "category": "Animals",
+      "difficulty_level": 1,
+      "ml_labels": ["cat", "animal"]
+    },
+    {
+      "id": "lion_013",
+      "word_arabic": "أسد",
+      "word_english": "Lion",
+      "image_path": "assets/images/cards/lion.png",
+      "audio_arabic_path": "assets/audio/lion_ar.mp3",
+      "audio_english_path": "assets/audio/lion_en.mp3",
+      "category": "Animals",
+      "difficulty_level": 2,
+      "ml_labels": ["lion", "animal"]
+    },
+    {
+      "id": "bird_014",
+      "word_arabic": "عصفور",
+      "word_english": "Bird",
+      "image_path": "assets/images/cards/bird.png",
+      "audio_arabic_path": "assets/audio/bird_ar.mp3",
+      "audio_english_path": "assets/audio/bird_en.mp3",
+      "category": "Animals",
+      "difficulty_level": 1,
+      "ml_labels": ["bird", "animal"]
+    },
+    {
+      "id": "car_015",
+      "word_arabic": "سيارة",
+      "word_english": "Car",
+      "image_path": "assets/images/cards/car.png",
+      "audio_arabic_path": "assets/audio/car_ar.mp3",
+      "audio_english_path": "assets/audio/car_en.mp3",
+      "category": "Transport",
+      "difficulty_level": 2,
+      "ml_labels": ["car", "vehicle"]
+    },
+    {
+      "id": "bus_016",
+      "word_arabic": "حافلة",
+      "word_english": "Bus",
+      "image_path": "assets/images/cards/bus.png",
+      "audio_arabic_path": "assets/audio/bus_ar.mp3",
+      "audio_english_path": "assets/audio/bus_en.mp3",
+      "category": "Transport",
+      "difficulty_level": 2,
+      "ml_labels": ["bus", "vehicle"]
+    },
+    {
+      "id": "train_017",
+      "word_arabic": "قطار",
+      "word_english": "Train",
+      "image_path": "assets/images/cards/train.png",
+      "audio_arabic_path": "assets/audio/train_ar.mp3",
+      "audio_english_path": "assets/audio/train_en.mp3",
+      "category": "Transport",
+      "difficulty_level": 2,
+      "ml_labels": ["train", "vehicle"]
+    },
+    {
+      "id": "happy_018",
+      "word_arabic": "سعيد",
+      "word_english": "Happy",
+      "image_path": "assets/images/cards/happy.png",
+      "audio_arabic_path": "assets/audio/happy_ar.mp3",
+      "audio_english_path": "assets/audio/happy_en.mp3",
+      "category": "Emotions",
+      "difficulty_level": 1,
+      "ml_labels": ["happy", "emotion"]
+    },
+    {
+      "id": "sad_019",
+      "word_arabic": "حزين",
+      "word_english": "Sad",
+      "image_path": "assets/images/cards/sad.png",
+      "audio_arabic_path": "assets/audio/sad_ar.mp3",
+      "audio_english_path": "assets/audio/sad_en.mp3",
+      "category": "Emotions",
+      "difficulty_level": 1,
+      "ml_labels": ["sad", "emotion"]
+    },
+    {
+      "id": "angry_020",
+      "word_arabic": "غاضب",
+      "word_english": "Angry",
+      "image_path": "assets/images/cards/angry.png",
+      "audio_arabic_path": "assets/audio/angry_ar.mp3",
+      "audio_english_path": "assets/audio/angry_en.mp3",
+      "category": "Emotions",
+      "difficulty_level": 1,
+      "ml_labels": ["angry", "emotion"]
+    },
+    {
+      "id": "house_021",
+      "word_arabic": "منزل",
+      "word_english": "House",
+      "image_path": "assets/images/cards/house.png",
+      "audio_arabic_path": "assets/audio/house_ar.mp3",
+      "audio_english_path": "assets/audio/house_en.mp3",
+      "category": "Places",
+      "difficulty_level": 1,
+      "ml_labels": ["house", "home"]
+    },
+    {
+      "id": "door_022",
+      "word_arabic": "باب",
+      "word_english": "Door",
+      "image_path": "assets/images/cards/door.png",
+      "audio_arabic_path": "assets/audio/door_ar.mp3",
+      "audio_english_path": "assets/audio/door_en.mp3",
+      "category": "Objects",
+      "difficulty_level": 1,
+      "ml_labels": ["door"]
+    },
+    {
+      "id": "window_023",
+      "word_arabic": "نافذة",
+      "word_english": "Window",
+      "image_path": "assets/images/cards/window.png",
+      "audio_arabic_path": "assets/audio/window_ar.mp3",
+      "audio_english_path": "assets/audio/window_en.mp3",
+      "category": "Objects",
+      "difficulty_level": 1,
+      "ml_labels": ["window"]
+    },
+    {
+      "id": "phone_024",
+      "word_arabic": "هاتف",
+      "word_english": "Phone",
+      "image_path": "assets/images/cards/phone.png",
+      "audio_arabic_path": "assets/audio/phone_ar.mp3",
+      "audio_english_path": "assets/audio/phone_en.mp3",
+      "category": "Technology",
+      "difficulty_level": 1,
+      "ml_labels": ["phone", "device"]
+    },
+    {
+      "id": "computer_025",
+      "word_arabic": "حاسوب",
+      "word_english": "Computer",
+      "image_path": "assets/images/cards/computer.png",
+      "audio_arabic_path": "assets/audio/computer_ar.mp3",
+      "audio_english_path": "assets/audio/computer_en.mp3",
+      "category": "Technology",
+      "difficulty_level": 2,
+      "ml_labels": ["computer", "device"]
+    },
+    {
+      "id": "sun_026",
+      "word_arabic": "شمس",
+      "word_english": "Sun",
+      "image_path": "assets/images/cards/sun.png",
+      "audio_arabic_path": "assets/audio/sun_ar.mp3",
+      "audio_english_path": "assets/audio/sun_en.mp3",
+      "category": "Nature",
+      "difficulty_level": 1,
+      "ml_labels": ["sun", "nature"]
+    },
+    {
+      "id": "moon_027",
+      "word_arabic": "قمر",
+      "word_english": "Moon",
+      "image_path": "assets/images/cards/moon.png",
+      "audio_arabic_path": "assets/audio/moon_ar.mp3",
+      "audio_english_path": "assets/audio/moon_en.mp3",
+      "category": "Nature",
+      "difficulty_level": 1,
+      "ml_labels": ["moon", "nature"]
+    },
+    {
+      "id": "tree_028",
+      "word_arabic": "شجرة",
+      "word_english": "Tree",
+      "image_path": "assets/images/cards/tree.png",
+      "audio_arabic_path": "assets/audio/tree_ar.mp3",
+      "audio_english_path": "assets/audio/tree_en.mp3",
+      "category": "Nature",
+      "difficulty_level": 1,
+      "ml_labels": ["tree", "nature"]
+    },
+    {
+      "id": "watermelon_029",
+      "word_arabic": "بطيخ",
+      "word_english": "Watermelon",
+      "image_path": "assets/images/cards/watermelon.png",
+      "audio_arabic_path": "assets/audio/watermelon_ar.mp3",
+      "audio_english_path": "assets/audio/watermelon_en.mp3",
+      "category": "Food",
+      "difficulty_level": 1,
+      "ml_labels": ["watermelon", "fruit"]
+    },
+    {
+      "id": "icecream_030",
+      "word_arabic": "مثلجات",
+      "word_english": "Ice Cream",
+      "image_path": "assets/images/cards/icecream.png",
+      "audio_arabic_path": "assets/audio/icecream_ar.mp3",
+      "audio_english_path": "assets/audio/icecream_en.mp3",
+      "category": "Food",
+      "difficulty_level": 1,
+      "ml_labels": ["ice cream", "food", "dessert"]
+    }
+  ]
+}

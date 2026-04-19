@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:audioplayers/audioplayers.dart';
+import 'package:flutter_tts/flutter_tts.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:record/record.dart';
+import 'package:audioplayers/audioplayers.dart';
 import 'package:path_provider/path_provider.dart';
 import 'dart:io';
 import '../services/card_service.dart';
@@ -21,20 +22,28 @@ class CardDetailScreen extends StatefulWidget {
 }
 
 class _CardDetailScreenState extends State<CardDetailScreen> {
+  final FlutterTts _tts = FlutterTts();
   final AudioPlayer _player = AudioPlayer();
   final AudioRecorder _recorder = AudioRecorder();
   int _practiceCount = 0;
   bool _isRecording = false;
-  String? _recordingPath;
 
   @override
   void initState() {
     super.initState();
     _loadPracticeCount();
+    _initTts();
+  }
+
+  Future<void> _initTts() async {
+    await _tts.setVolume(1.0);
+    await _tts.setPitch(1.0);
+    await _tts.setSpeechRate(0.5);
   }
 
   @override
   void dispose() {
+    _tts.stop();
     _player.dispose();
     _recorder.dispose();
     super.dispose();
@@ -54,9 +63,15 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
     setState(() {});
   }
 
-  Future<void> _playAudio(String assetPath) async {
-    await _player.stop();
-    await _player.play(AssetSource(assetPath.replaceFirst('assets/', '')));
+  Future<void> _speakArabic() async {
+    await _tts.setLanguage('ar-SA');
+    await _tts.speak(widget.card.wordArabic);
+    _incrementPractice();
+  }
+
+  Future<void> _speakEnglish() async {
+    await _tts.setLanguage('en-US');
+    await _tts.speak(widget.card.wordEnglish);
     _incrementPractice();
   }
 
@@ -70,7 +85,6 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
       );
       setState(() {
         _isRecording = true;
-        _recordingPath = path;
       });
     }
   }
@@ -87,6 +101,7 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
   @override
   Widget build(BuildContext context) {
     final c = widget.card;
+    final isArabic = widget.language == 'ar';
 
     return Scaffold(
       backgroundColor: const Color(0xFFF2EAE0),
@@ -116,7 +131,7 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
             ),
             const SizedBox(height: 12),
             Text(
-              widget.language == 'ar'
+              isArabic
                   ? 'تم التدرب $_practiceCount مرة'
                   : 'Practiced $_practiceCount times',
               style: const TextStyle(fontSize: 14, color: Colors.grey),
@@ -134,7 +149,7 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
             ),
             const SizedBox(height: 32),
             ElevatedButton.icon(
-              onPressed: () => _playAudio(c.audioArabicPath),
+              onPressed: _speakArabic,
               icon: const Icon(Icons.volume_up),
               label: const Text('استمع بالعربية',
                   style: TextStyle(fontSize: 18)),
@@ -150,7 +165,7 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
             ),
             const SizedBox(height: 12),
             ElevatedButton.icon(
-              onPressed: () => _playAudio(c.audioEnglishPath),
+              onPressed: _speakEnglish,
               icon: const Icon(Icons.volume_up),
               label: const Text('Listen in English',
                   style: TextStyle(fontSize: 18)),
@@ -170,10 +185,10 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
               icon: Icon(_isRecording ? Icons.stop : Icons.mic),
               label: Text(
                 _isRecording
-                    ? (widget.language == 'ar'
+                    ? (isArabic
                         ? 'اضغط للإيقاف والاستماع'
                         : 'Tap to stop & listen')
-                    : (widget.language == 'ar' ? 'كرر بعدي' : 'Repeat After Me'),
+                    : (isArabic ? 'كرر بعدي' : 'Repeat After Me'),
                 style: const TextStyle(fontSize: 16),
               ),
               style: ElevatedButton.styleFrom(

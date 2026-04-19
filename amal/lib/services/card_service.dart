@@ -9,7 +9,6 @@ class VocabCard {
   final String audioArabicPath;
   final String audioEnglishPath;
   final String category;
-  final int difficultyLevel;
   final List<String> mlLabels;
 
   VocabCard({
@@ -20,7 +19,6 @@ class VocabCard {
     required this.audioArabicPath,
     required this.audioEnglishPath,
     required this.category,
-    required this.difficultyLevel,
     required this.mlLabels,
   });
 
@@ -30,10 +28,9 @@ class VocabCard {
       wordArabic: json['word_arabic'],
       wordEnglish: json['word_english'],
       imagePath: json['image_path'],
-      audioArabicPath: json['audio_arabic_path'],
-      audioEnglishPath: json['audio_english_path'],
+      audioArabicPath: json['audio_arabic_path'] ?? '',
+      audioEnglishPath: json['audio_english_path'] ?? '',
       category: json['category'],
-      difficultyLevel: json['difficulty_level'],
       mlLabels: List<String>.from(json['ml_labels'] ?? []),
     );
   }
@@ -45,7 +42,7 @@ class CardService {
   static Future<List<VocabCard>> loadCards() async {
     if (_cache != null) return _cache!;
     final jsonString = await rootBundle.loadString(
-      'assets/data/vocabulary_cards.json',
+      'assets/data/vocab_cards.json',
     );
     final List<dynamic> jsonList = json.decode(jsonString);
     _cache = jsonList.map((j) => VocabCard.fromJson(j)).toList();

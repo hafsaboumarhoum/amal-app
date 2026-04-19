@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'screens/category_screen.dart';
 import 'screens/checklist_intro_screen.dart';
 import 'screens/challenge_screen.dart';
+import 'screens/daily_guide_screen.dart';
+import 'screens/specialist_directory_screen.dart';
 
 class HomeScreen extends StatelessWidget {
   final String language;
@@ -118,6 +120,21 @@ class HomeScreen extends StatelessWidget {
                       context,
                       MaterialPageRoute(
                         builder: (_) => ChallengeScreen(language: language),
+                      ),
+                    );
+                  } else if (index == 2) {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (_) =>
+                            SpecialistDirectoryScreen(language: language),
+                      ),
+                    );
+                  } else if (index == 3) {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (_) => DailyGuideScreen(language: language),
                       ),
                     );
                   } else if (index == 4) {

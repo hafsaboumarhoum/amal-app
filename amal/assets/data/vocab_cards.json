@@ -1,0 +1,313 @@
+[
+  {
+    "id": "apple_001",
+    "word_english": "Apple",
+    "word_arabic": "تفاحة",
+    "category": "Food",
+    "image_path": "assets/images/1000587801.jpg",
+    "audio_arabic_path": "",
+    "audio_english_path": "",
+    "ml_labels": ["apple", "fruit", "food"]
+  },
+  {
+    "id": "bread_001",
+    "word_english": "Bread",
+    "word_arabic": "خبز",
+    "category": "Food",
+    "image_path": "assets/images/1000587804.jpg",
+    "audio_arabic_path": "",
+    "audio_english_path": "",
+    "ml_labels": ["bread", "food", "baked goods"]
+  },
+  {
+    "id": "milk_001",
+    "word_english": "Milk",
+    "word_arabic": "حليب",
+    "category": "Food",
+    "image_path": "assets/images/1000587787.jpg",
+    "audio_arabic_path": "",
+    "audio_english_path": "",
+    "ml_labels": ["milk", "drink", "dairy"]
+  },
+  {
+    "id": "orange_001",
+    "word_english": "Orange",
+    "word_arabic": "برتقالة",
+    "category": "Food",
+    "image_path": "assets/images/1000587789.jpg",
+    "audio_arabic_path": "",
+    "audio_english_path": "",
+    "ml_labels": ["orange", "fruit", "food"]
+  },
+  {
+    "id": "water_001",
+    "word_english": "Water",
+    "word_arabic": "ماء",
+    "category": "Food",
+    "image_path": "assets/images/1000587798.jpg",
+    "audio_arabic_path": "",
+    "audio_english_path": "",
+    "ml_labels": ["water", "drink", "liquid"]
+  },
+  {
+    "id": "cat_001",
+    "word_english": "Cat",
+    "word_arabic": "قطة",
+    "category": "Animals",
+    "image_path": "assets/images/1000587777.jpg",
+    "audio_arabic_path": "",
+    "audio_english_path": "",
+    "ml_labels": ["cat", "animal", "pet"]
+  },
+  {
+    "id": "dog_001",
+    "word_english": "Dog",
+    "word_arabic": "كلب",
+    "category": "Animals",
+    "image_path": "assets/images/1000587778.jpg",
+    "audio_arabic_path": "",
+    "audio_english_path": "",
+    "ml_labels": ["dog", "animal", "pet"]
+  },
+  {
+    "id": "fish_001",
+    "word_english": "Fish",
+    "word_arabic": "سمكة",
+    "category": "Animals",
+    "image_path": "assets/images/1000587780.jpg",
+    "audio_arabic_path": "",
+    "audio_english_path": "",
+    "ml_labels": ["fish", "animal", "sea"]
+  },
+  {
+    "id": "lion_001",
+    "word_english": "Lion",
+    "word_arabic": "أسد",
+    "category": "Animals",
+    "image_path": "assets/images/1000587786.jpg",
+    "audio_arabic_path": "",
+    "audio_english_path": "",
+    "ml_labels": ["lion", "animal", "wild"]
+  },
+  {
+    "id": "happy_001",
+    "word_english": "Happy",
+    "word_arabic": "سعيد",
+    "category": "Emotions",
+    "image_path": "assets/images/1000587784.jpg",
+    "audio_arabic_path": "",
+    "audio_english_path": "",
+    "ml_labels": ["(happy)", "emotion"]
+  },
+  {
+    "id": "sad_001",
+    "word_english": "Sad",
+    "word_arabic": "حزين",
+    "category": "Emotions",
+    "image_path": "assets/images/1000587792.jpg",
+    "audio_arabic_path": "",
+    "audio_english_path": "",
+    "ml_labels": ["(sad)", "emotion"]
+  },
+  {
+    "id": "calm_001",
+    "word_english": "Calm",
+    "word_arabic": "هادئ",
+    "category": "Emotions",
+    "image_path": "assets/images/1000587776.jpg",
+    "audio_arabic_path": "",
+    "audio_english_path": "",
+    "ml_labels": ["(calm)", "emotion"]
+  },
+  {
+    "id": "tired_001",
+    "word_english": "Tired",
+    "word_arabic": "متعب",
+    "category": "Emotions",
+    "image_path": "assets/images/1000587796.jpg",
+    "audio_arabic_path": "",
+    "audio_english_path": "",
+    "ml_labels": ["(tired)", "emotion"]
+  },
+  {
+    "id": "house_001",
+    "word_english": "House",
+    "word_arabic": "منزل",
+    "category": "Daily Life",
+    "image_path": "assets/images/1000587785.jpg",
+    "audio_arabic_path": "",
+    "audio_english_path": "",
+    "ml_labels": ["house", "home", "building"]
+  },
+  {
+    "id": "school_001",
+    "word_english": "School",
+    "word_arabic": "مدرسة",
+    "category": "Daily Life",
+    "image_path": "assets/images/1000587793.jpg",
+    "audio_arabic_path": "",
+    "audio_english_path": "",
+    "ml_labels": ["school", "building", "education"]
+  },
+  {
+    "id": "one_001",
+    "word_english": "One",
+    "word_arabic": "واحد",
+    "category": "Numbers",
+    "image_path": "assets/images/1000587788.jpg",
+    "audio_arabic_path": "",
+    "audio_english_path": "",
+    "ml_labels": ["(one)", "number"]
+  },
+  {
+    "id": "two_001",
+    "word_english": "Two",
+    "word_arabic": "اثنان",
+    "category": "Numbers",
+    "image_path": "assets/images/1000587797.jpg",
+    "audio_arabic_path": "",
+    "audio_english_path": "",
+    "ml_labels": ["(two)", "number"]
+  },
+  {
+    "id": "three_001",
+    "word_english": "Three",
+    "word_arabic": "ثلاثة",
+    "category": "Numbers",
+    "image_path": "assets/images/1000587795.jpg",
+    "audio_arabic_path": "",
+    "audio_english_path": "",
+    "ml_labels": ["(three)", "number"]
+  },
+  {
+    "id": "four_001",
+    "word_english": "Four",
+    "word_arabic": "أربعة",
+    "category": "Numbers",
+    "image_path": "assets/images/1000587782.jpg",
+    "audio_arabic_path": "",
+    "audio_english_path": "",
+    "ml_labels": ["(four)", "number"]
+  },
+  {
+    "id": "five_001",
+    "word_english": "Five",
+    "word_arabic": "خمسة",
+    "category": "Numbers",
+    "image_path": "assets/images/1000587781.jpg",
+    "audio_arabic_path": "",
+    "audio_english_path": "",
+    "ml_labels": ["(five)", "number"]
+  },
+  {
+    "id": "red_001",
+    "word_english": "Red",
+    "word_arabic": "أحمر",
+    "category": "Colors",
+    "image_path": "assets/images/color_red.png",
+    "audio_arabic_path": "",
+    "audio_english_path": "",
+    "ml_labels": ["red", "color"]
+  },
+  {
+    "id": "orange_color_001",
+    "word_english": "Orange",
+    "word_arabic": "برتقالي",
+    "category": "Colors",
+    "image_path": "assets/images/color_orange.png",
+    "audio_arabic_path": "",
+    "audio_english_path": "",
+    "ml_labels": ["orange", "color"]
+  },
+  {
+    "id": "yellow_001",
+    "word_english": "Yellow",
+    "word_arabic": "أصفر",
+    "category": "Colors",
+    "image_path": "assets/images/color_yellow.png",
+    "audio_arabic_path": "",
+    "audio_english_path": "",
+    "ml_labels": ["yellow", "color"]
+  },
+  {
+    "id": "green_001",
+    "word_english": "Green",
+    "word_arabic": "أخضر",
+    "category": "Colors",
+    "image_path": "assets/images/color_green.png",
+    "audio_arabic_path": "",
+    "audio_english_path": "",
+    "ml_labels": ["green", "color"]
+  },
+  {
+    "id": "blue_001",
+    "word_english": "Blue",
+    "word_arabic": "أزرق",
+    "category": "Colors",
+    "image_path": "assets/images/color_blue.png",
+    "audio_arabic_path": "",
+    "audio_english_path": "",
+    "ml_labels": ["blue", "color"]
+  },
+  {
+    "id": "purple_001",
+    "word_english": "Purple",
+    "word_arabic": "بنفسجي",
+    "category": "Colors",
+    "image_path": "assets/images/color_purple.png",
+    "audio_arabic_path": "",
+    "audio_english_path": "",
+    "ml_labels": ["purple", "color"]
+  },
+  {
+    "id": "pink_001",
+    "word_english": "Pink",
+    "word_arabic": "وردي",
+    "category": "Colors",
+    "image_path": "assets/images/color_pink.png",
+    "audio_arabic_path": "",
+    "audio_english_path": "",
+    "ml_labels": ["pink", "color"]
+  }
+  ,
+  {
+    "id": "white_001",
+    "word_english": "White",
+    "word_arabic": "أبيض",
+    "category": "Colors",
+    "image_path": "assets/images/color_white.png",
+    "audio_arabic_path": "",
+    "audio_english_path": "",
+    "ml_labels": ["white", "color"]
+  },
+  {
+    "id": "black_001",
+    "word_english": "Black",
+    "word_arabic": "أسود",
+    "category": "Colors",
+    "image_path": "assets/images/color_black.png",
+    "audio_arabic_path": "",
+    "audio_english_path": "",
+    "ml_labels": ["black", "color"]
+  },
+  {
+    "id": "brown_001",
+    "word_english": "Brown",
+    "word_arabic": "بني",
+    "category": "Colors",
+    "image_path": "assets/images/color_brown.png",
+    "audio_arabic_path": "",
+    "audio_english_path": "",
+    "ml_labels": ["brown", "color"]
+  },
+  {
+    "id": "grey_001",
+    "word_english": "Grey",
+    "word_arabic": "رمادي",
+    "category": "Colors",
+    "image_path": "assets/images/color_grey.png",
+    "audio_arabic_path": "",
+    "audio_english_path": "",
+    "ml_labels": ["grey", "color"]
+  }
+]

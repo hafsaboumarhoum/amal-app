@@ -31,6 +31,6 @@ dev_dependencies:
 flutter:
   uses-material-design: true
   assets:
-    - assets/data/
-    - assets/audio/
-    - assets/images/
+  - assets/data/
+  - assets/images/
+  - assets/images/fwd (1) 2/
